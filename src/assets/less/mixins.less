@@ -1,0 +1,76 @@
+/*
+ * @Author: S
+ * @Date: 2018-12-14 17:41:21
+ * @Last Modified by: SHEN
+ * @Last Modified time: 2019-05-17 13:06:05
+ */
+
+@import "./variable.less";
+
+.relative {
+  position: relative;
+}
+.absolute(@left: 0, @right: 0, @top: 0, @bottom: 0) {
+  position: absolute;
+  left: @left;
+  right: @right;
+  top: @top;
+  bottom: @bottom;
+}
+.flex(@direction: inherit, @justifyContent: inherit, @alignItems: inherit) {
+  display: flex;
+  flex-direction: @direction;
+  justify-content: @justifyContent;
+  align-items: @alignItems;
+}
+.size(@w: 0, @h: 0) {
+  width: @w;
+  height: @h;
+  line-height: @h;
+}
+.padding(@val: 8px) {
+  box-sizing: border-box;
+  padding: @val;
+}
+.margin(@val: 8px) {
+  box-sizing: border-box;
+  margin: @val;
+}
+.font(@val: 14px) {
+  font-size: @val;
+}
+.overflow(@x: auto, @y: auto) {
+  overflow-x: @x;
+  overflow-y: @y;
+}
+.maxline(@line: 10000) {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: @line;
+}
+.seperator(@direction: bottom, @padding: 0, @color: @colorGrayLight) {
+  position: relative;
+  &::after {
+    .absolute(0, 0, auto, 0);
+    content: '';
+    background-color: @color;
+  }
+  &::after when (@direction=bottom) {
+    .absolute(@padding, 0, auto, 0);
+    height: 1px;
+  }
+  &::after when (@direction=top) {
+    .absolute(@padding, 0, 0, auto);
+    height: 1px;
+  }
+  &::after when (@direction=left) {
+    .absolute(0, auto, 0, 0);
+    width: 1px;
+  }
+  &::after when (@direction=right) {
+    .absolute(auto, 0, 0, 0);
+    width: 1px;
+  }
+
+}

@@ -1,0 +1,32 @@
+打包
+npm run build --report=true --gzip=true
+npm run build --gzip=true
+
+
+
+[参考]
+【译】使用 React，TypeScript 和 Webpack 开始一个项目
+https://juejin.im/post/5d04d5e46fb9a07ec27ba192
+
+Tutorial: How to set up React, webpack, and Babel 7 from scratch (2020)
+https://www.valentinog.com/blog/babel/
+
+
+webpack 配置react脚手架（三）：eslint 及优化
+https://www.cnblogs.com/xiaozhumaopao/p/10998133.html
+
+使用 TypeScript + React + Redux 进行项目开发（入门篇，附源码）
+https://juejin.im/post/5c81d10b5188257ee7275222
+
+2019年 React 新手学习指南 – 从 React 学习线路图说开去
+https://www.html.cn/archives/10111
+
+typescript-react-example
+https://github.com/beichensky/typescript-react-example
+
+React 入门
+http://react.html.cn/docs/getting-started.html#学习-react
+
+
+[例子]
+https://elemefe.github.io/element-react/index#/zh-CN/slider
