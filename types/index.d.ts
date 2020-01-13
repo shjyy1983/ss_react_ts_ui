@@ -7,6 +7,7 @@ declare namespace SSReactLibs {
   }
 
   class PureComponent<P, S> extends React.PureComponent<P, S> {
+  }
 }
 
 declare namespace SSReactUI {
