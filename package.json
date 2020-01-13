@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/ss_vue_ui.min.js",
   "scripts": {
-    "lint": "eslint --ext .jsx --ext .js src/",
+    "lint": "eslint --ext .tsx --ext .js ./src",
     "precommit": "npm run lint",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.dev.conf.js",
     "demo": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.demo.conf.js",
