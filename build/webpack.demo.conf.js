@@ -2,7 +2,7 @@
  * @Author: SHEN
  * @Date: 2020-01-03 09:31:33
  * @Last Modified by: SHEN
- * @Last Modified time: 2020-01-12 22:54:01
+ * @Last Modified time: 2020-01-12 23:40:40
  */
 'use strict'
 const utils = require('./utils')
@@ -22,7 +22,7 @@ const PORT = process.env.PORT && Number(process.env.PORT) // 读取系统环境�
 const devWebpackConfig = merge(baseWebpackConfig, {
   mode: 'development',
   entry: {
-    app: ["./src/app.tsx"]
+    app: ["./src/demo.tsx"]
   },
   devtool: config.dev.devtool,
   devServer: {
@@ -31,7 +31,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     open: config.dev.autoOpenBrowser,
     contentBase: false, // since we use CopyWebpackPlugin.
     hot: true, // 开启热模块加载
-    quiet: true,
+    quiet: false,
     clientLogLevel: 'warning', // console 控制台显示的消息，可能的值有 none, error, warning 或者 info
     historyApiFallback: {
       rewrites: [
@@ -86,3 +86,39 @@ module.exports = new Promise((resolve, reject) => {
     }
   })
 })
+// 'use strict'
+// const webpack = require('webpack')
+// const utils = require('./utils')
+// const path = require('path')
+// const config = require('./config') // 基本配置的参数
+// const baseWebpackConfig = require('./webpack.base.conf') // webpack基本配置文件（开发和生产环境公用部分）
+// const merge = require('webpack-merge') // webpack-merge是一个可以合并数组和对象的插件
+// const CopyWebpackPlugin = require('copy-webpack-plugin')
+
+// const webpackConfig = merge(baseWebpackConfig, {
+//   mode: 'production',
+//   entry: {
+//     app: ["./src/demo.tsx"]
+//   },
+//   devtool: config.build.productionSourceMap ? config.build.devtool : false,
+//   output: {
+//     path: path.resolve(__dirname, '../dist-demo'),
+//     filename: utils.assetsPath('js/[name].[chunkhash].js'),
+//     chunkFilename: utils.assetsPath('js/[name].[id].[chunkhash].js')
+//   },
+//   plugins: [
+//     new webpack.DefinePlugin({
+//       'process.env': require('./config/prod.env')
+//     }),
+//     // copy custom static assets
+//     new CopyWebpackPlugin([
+//       {
+//         from: path.resolve(__dirname, '../static'),
+//         to: config.build.assetsSubDirectory,
+//         ignore: ['.*']
+//       }
+//     ])
+//   ]
+// })
+
+// module.exports = webpackConfig

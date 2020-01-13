@@ -2,20 +2,16 @@
  * @Author: SHEN
  * @Date: 2020-01-01 15:14:31
  * @Last Modified by: SHEN
- * @Last Modified time: 2020-01-09 14:05:44
+ * @Last Modified time: 2020-01-12 22:52:08
  */
 'use strict'
 const path = require('path')
 const utils = require('./utils')
 const HtmlWebPackPlugin = require("html-webpack-plugin")
-const { CheckerPlugin, TsConfigPathsPlugin } = require("awesome-typescript-loader")
 
 module.exports = {
   // 基础目录，绝对路径，用于从配置中解析入口起点，以下配置为项目根目录
   context: path.resolve(__dirname, '..'),
-  entry: {
-    app: ["./src/index.tsx"]
-  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].bundle.js'
@@ -36,13 +32,17 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
-        loader: "awesome-typescript-loader",
-        options: {
-          // 特定环境的配置
-          configFileName: process.env.NODE_ENV === 'development' ? 'tsconfig.dev.json' : 'tsconfig.prod.json'
-        }
-      },
+				test: /\.tsx?$/,
+				use: [
+					{
+						loader: 'babel-loader',
+					},
+					{
+						loader: 'ts-loader',
+					}
+				],
+				include: path.resolve(__dirname, "../src/"),
+			},
       {
         test: /\.css|\.less$/,
         use: [
@@ -79,7 +79,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new CheckerPlugin(),
     new HtmlWebPackPlugin({
       template: "./index.html",
       filename: "./index.html",

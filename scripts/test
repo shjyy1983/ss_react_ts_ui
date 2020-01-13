@@ -1,0 +1,2 @@
+filename=`date "+%Y-%m-%d_%H:%M:%S"`
+echo '测试...' > "../logs/${filename}.log"

@@ -57,7 +57,7 @@ class SButton extends React.Component<IProps, IState> {
   }
 
   private handleClick(e: MouseEvent<HTMLDivElement>): void {
-    this.props.onClick(e);
+    this.props.onClick && this.props.onClick(e);
     this.setState({
       bgColor: this.props.bgColor
     });

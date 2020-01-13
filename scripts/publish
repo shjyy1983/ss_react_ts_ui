@@ -1,0 +1,26 @@
+# 发布
+echo '发布中...'
+
+echo -e '========================'
+echo '切换到 dev 分支，提交代码'
+git checkout dev
+npm run build
+git add .
+git commit -m 'dev'
+npm version patch
+git push origin dev
+
+echo -e '\n\n========================'
+echo '切换到 master 分支，合并代码，提交代码'
+git checkout master
+git merge dev
+git push origin master
+git push --tags
+npm publish
+
+echo -e '\n\n========================'
+echo '切换到 dev 分支'
+git checkout dev
+
+echo -e '\n\n========================'
+echo '完毕'
