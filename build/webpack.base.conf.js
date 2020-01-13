@@ -7,7 +7,6 @@
 'use strict'
 const path = require('path')
 const utils = require('./utils')
-const HtmlWebPackPlugin = require("html-webpack-plugin")
 
 module.exports = {
   // 基础目录，绝对路径，用于从配置中解析入口起点，以下配置为项目根目录

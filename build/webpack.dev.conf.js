@@ -2,7 +2,7 @@
  * @Author: SHEN
  * @Date: 2020-01-03 09:31:33
  * @Last Modified by: SHEN
- * @Last Modified time: 2020-01-13 10:21:32
+ * @Last Modified time: 2020-01-13 11:02:05
  */
 'use strict'
 const utils = require('./utils')
@@ -14,6 +14,7 @@ const merge = require('webpack-merge') // webpack-merge是一个可以合并数�
 const portfinder = require('portfinder') // 自动检索下一个可用端口
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin') // friendly-errors-webpack-plugin用于更友好地输出webpack的警告、错误等信息
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const HtmlWebPackPlugin = require("html-webpack-plugin")
 
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT) // 读取系统环境变量的port
