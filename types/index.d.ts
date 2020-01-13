@@ -4,9 +4,6 @@ declare namespace SSReactLibs {
     style?: React.CSSProperties;
   }
   class Component<P, S> extends React.Component<P, S> {
-    classNames?(...args): any
-    className?(...args): any
-    style?(agrs?): any
   }
 }
 
