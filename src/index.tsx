@@ -3,8 +3,10 @@
 
 import SButton from '@components/SButton';
 import SIcon from '@components/SIcon';
+import SInput from '@components/SInput';
 
 export default {
   SButton,
-  SIcon
-}
+  SIcon,
+  SInput
+};
