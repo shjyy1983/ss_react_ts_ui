@@ -20,5 +20,5 @@ declare namespace SSReactUI {
 }
 
 declare module "ss_react_ts_ui" {
-  export import SButton = SSReactLibs.SButton
+  export import SButton = SSReactUI.SButton
 }
