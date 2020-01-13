@@ -18,7 +18,7 @@ interface IState {
 class SInput extends React.PureComponent<IProps, IState> {
   private inputRef = React.createRef<HTMLInputElement>();
 
-  constructor(props: IProps) {
+  public constructor(props: IProps) {
     super(props);
     this.state = {
       value: ''
@@ -27,7 +27,7 @@ class SInput extends React.PureComponent<IProps, IState> {
     this.handleBlur = this.handleBlur.bind(this);
   }
 
-  componentDidMount(){
+  public componentDidMount(){
     if(this.props.autofocus) {
       this.inputRef.current.focus();
     }
@@ -36,7 +36,7 @@ class SInput extends React.PureComponent<IProps, IState> {
     });
   }
 
-  render() {
+  public render(): void {
     const { width, height, padding, fontSize } = this.props;
     const dynamicStyle = {
       width: width || '100%',
