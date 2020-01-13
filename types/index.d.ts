@@ -5,6 +5,8 @@ declare namespace SSReactLibs {
   }
   class Component<P, S> extends React.Component<P, S> {
   }
+
+  class PureComponent<P, S> extends React.PureComponent<P, S> {
 }
 
 declare namespace SSReactUI {
@@ -18,7 +20,7 @@ declare namespace SSReactUI {
     padding?: string;
     fontSize?: number;
   }
-  export class SInput extends SSReactLibs.Component<SInputProps, {}> {
+  export class SInput extends SSReactLibs.PureComponent<SInputProps, {}> {
 
   }
 
