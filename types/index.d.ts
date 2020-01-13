@@ -35,5 +35,5 @@ declare namespace SSReactUI {
 
 declare module "ss_react_ts_ui" {
   export import SButton = SSReactUI.SButton
-  export import SInput = SInput.SInput
+  export import SInput = SSReactUI.SInput
 }
