@@ -20,4 +20,3 @@ for tag in $(git tag -l)
   done
 
 
-
