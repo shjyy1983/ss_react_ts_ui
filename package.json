@@ -2,7 +2,7 @@
   "name": "ss_react_ts_ui",
   "version": "1.0.5",
   "description": "",
-  "main": "dist/ss_vue_ui.min.js",
+  "main": "dist/ss_react_ts_ui.min.js",
   "scripts": {
     "lint": "eslint --ext .tsx --ext .js ./src",
     "precommit": "npm run lint",
