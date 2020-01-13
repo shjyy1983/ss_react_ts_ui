@@ -2,7 +2,7 @@
  * @Author: SHEN
  * @Date: 2020-01-01 15:14:31
  * @Last Modified by: SHEN
- * @Last Modified time: 2020-01-12 22:52:08
+ * @Last Modified time: 2020-01-13 10:21:25
  */
 'use strict'
 const path = require('path')
@@ -79,10 +79,5 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebPackPlugin({
-      template: "./index.html",
-      filename: "./index.html",
-      inject: 'body'
-    })
   ]
 };

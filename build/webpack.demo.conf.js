@@ -2,7 +2,7 @@
  * @Author: SHEN
  * @Date: 2020-01-03 09:31:33
  * @Last Modified by: SHEN
- * @Last Modified time: 2020-01-12 23:40:40
+ * @Last Modified time: 2020-01-13 10:21:32
  */
 'use strict'
 const utils = require('./utils')
@@ -57,7 +57,12 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         to: config.dev.assetsSubDirectory,
         ignore: ['.*']
       }
-    ])
+    ]),
+    new HtmlWebPackPlugin({
+      template: "./index.html",
+      filename: "./index.html",
+      inject: 'body'
+    })
   ]
 })
 

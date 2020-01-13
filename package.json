@@ -10,7 +10,7 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.dev.conf.js",
     "demo": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.demo.conf.js",
     "build_demo": "cross-env NODE_ENV=production webpack --progress --hide-modules --config build/webpack.demo.conf.js",
-    "build": "cross-env NODE_ENV=production node build/build.js",
+    "build": "cross-env NODE_ENV=production node build/build.js --gzip=true",
     "publish_npm": "./scripts/publish"
   },
   "pre-commit": [
