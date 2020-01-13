@@ -13,7 +13,7 @@
     "publish": "echo 'abc'"
   },
   "pre-commit": [
-    "publish"
+    "lint"
   ],
   "author": "SHEN",
   "license": "ISC",
