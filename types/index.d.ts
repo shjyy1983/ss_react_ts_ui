@@ -1,7 +1,3 @@
-declare module "ss_react_ts_ui" {
-  export import SButton = ElementReact.Button
-}
-
 declare namespace SSReactLibs {
   interface ComponentProps<T> {
     className?: string;
@@ -24,4 +20,8 @@ declare namespace SSReactUI {
   }
   export class SButton extends SSReactLibs.Component<SButtonProps, {}> {
   }
+}
+
+declare module "ss_react_ts_ui" {
+  export import SButton = SSReactLibs.SButton
 }
