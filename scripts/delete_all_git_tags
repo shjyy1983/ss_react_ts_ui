@@ -12,11 +12,25 @@ else
 fi
 
 # 删除
-git checkout dev
+git checkout master
 for tag in $(git tag -l)
   do
     echo 删除远端tag: ${tag}
     git push origin :refs/tags/${tag}
   done
 
+echo 删除所有本地 master 分支tag
+for tag in $(git tag -l)
+  do
+    git tag -d ${tag}
+  done
 
+
+echo 删除所有本地dev分支tag
+git checkout dev
+for tag in $(git tag -l)
+  do
+    git tag -d ${tag}
+  done
+
+echo 完毕
