@@ -1,6 +1,6 @@
 {
   "name": "ss_react_ts_ui",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "dist/ss_vue_ui.min.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "demo": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.demo.conf.js",
     "demo2": "cross-env NODE_ENV=production webpack --progress --hide-modules --config build/webpack.demo.conf.js",
     "build": "cross-env NODE_ENV=production node build/build.js",
-    "publish": "./scripts/publish"
+    "publish_npm": "./scripts/publish"
   },
   "pre-commit": [
     "lint"
