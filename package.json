@@ -12,6 +12,9 @@
     "build": "cross-env NODE_ENV=production node build/build.js",
     "publish": "echo 'abc'"
   },
+  "pre-commit": [
+    "publish"
+  ],
   "author": "SHEN",
   "license": "ISC",
   "repository": {
@@ -53,6 +56,7 @@
     "node-notifier": "^6.0.0",
     "ora": "^4.0.3",
     "portfinder": "^1.0.25",
+    "pre-commit": "^1.2.2",
     "prop-types": "^15.7.2",
     "rimraf": "^3.0.0",
     "semver": "^7.1.1",
