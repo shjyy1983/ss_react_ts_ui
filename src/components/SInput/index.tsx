@@ -36,7 +36,7 @@ class SInput extends React.PureComponent<IProps, IState> {
     });
   }
 
-  public render(): void {
+  public render() {
     const { width, height, padding, fontSize } = this.props;
     const dynamicStyle = {
       width: width || '100%',
