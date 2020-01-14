@@ -1,6 +1,6 @@
 {
   "name": "ss_react_ts_ui",
-  "version": "1.0.30",
+  "version": "1.0.31",
   "description": "",
   "main": "dist/ss_react_ts_ui.min.js",
   "typings": "types/index.d.ts",
