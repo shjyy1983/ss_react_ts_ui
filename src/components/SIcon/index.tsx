@@ -4,14 +4,16 @@ import { string } from 'prop-types';
 interface IProps {
   icon: string;
   color?: string;
+  fontSize?: string;
 }
 
 // 无状态组件
-const SIcon: SFC<IProps> = ({ icon, color }) => {
+const SIcon: SFC<IProps> = ({ icon, color, fontSize }) => {
   const clsNames = `iconfont ${icon}`;
   if (color) {
     const dynamicStyle = {
-      color: color || '#000'
+      color: color || '#000',
+      fontSize: fontSize || '12px'
     };
     return (
       <i className={clsNames} style={dynamicStyle}></i>

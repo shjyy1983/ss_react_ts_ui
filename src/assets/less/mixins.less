@@ -2,7 +2,7 @@
  * @Author: S
  * @Date: 2018-12-14 17:41:21
  * @Last Modified by: SHEN
- * @Last Modified time: 2019-05-17 13:06:05
+ * @Last Modified time: 2020-01-14 11:17:53
  */
 
 @import "./variable.less";
@@ -22,6 +22,9 @@
   flex-direction: @direction;
   justify-content: @justifyContent;
   align-items: @alignItems;
+}
+.flexGrow(@val: 1) {
+  flex-grow: @val;
 }
 .size(@w: 0, @h: 0) {
   width: @w;
@@ -72,5 +75,4 @@
     .absolute(auto, 0, 0, 0);
     width: 1px;
   }
-
 }

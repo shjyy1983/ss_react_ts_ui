@@ -2,7 +2,7 @@
  * @Author: SHEN
  * @Date: 2020-01-01 15:14:31
  * @Last Modified by: SHEN
- * @Last Modified time: 2020-01-13 19:16:09
+ * @Last Modified time: 2020-01-14 10:43:30
  */
 'use strict'
 const path = require('path')
@@ -47,19 +47,7 @@ module.exports = {
       {
         test: /\.css|\.less$/,
         use: [
-          require.resolve('style-loader'),
-          {
-            loader: require.resolve('css-loader'),
-            options: {
-              importLoaders: 1,
-            },
-          },
-          {
-            loader: require.resolve('less-loader'),
-            options: {
-              importLoaders: 1,
-            },
-          }
+          'style-loader', 'css-loader', 'postcss-loader', 'less-loader'
         ]
       },
       // 对图片资源文件使用url-loader

@@ -1,12 +1,26 @@
+@import "~assets/less/mixins.less";
+
 .s-cell {
-  position: relative;
+  .relative();
+  .seperator();
+  .flex(@direction: row);
   width: 100%;
-  min-height: 44px;
-  border-bottom: 1px solid gray;
-  &-title {
-
+  height: 44px;
+  &-content {
+    .flex(@direction: column, @justifyContent: center);
+    .flexGrow();
+    .font(14px);
+    padding: 0 @lenNormal;
+    &-title {
+      color: @colorBlack;
+    }
+    &-subtitle {
+      .font(12px);
+      color: @colorGray;
+    }
   }
-  &-subtitle {
-
+  &-accessory {
+    .flex(@justifyContent: center, @alignItems: center);
+    .size(40px, 100%);
   }
 }

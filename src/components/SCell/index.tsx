@@ -1,12 +1,13 @@
 import React, {  MouseEvent, TouchEvent } from 'react';
-import { increaseBrightness } from '@utils/func';
-import { string } from 'prop-types';
+import SIcon from '../SIcon';
 import './style.less';
 
 interface Props {
   title?: string;
   subTitle?: string;
   bgColor?: string;
+  hightlightBgColor?: string;
+  accessory?: boolean;
   onClick?: (event: MouseEvent<HTMLDivElement>) => void;
 }
 
@@ -32,10 +33,35 @@ class SCell extends React.PureComponent<Props, State> {
     this.handleTouchEnd = this.handleTouchEnd.bind(this);
   }
 
+  componentDidMount() {
+    this.setState({
+      bgColor: this.props.bgColor || '#fff'
+    });
+  }
+
   render() {
     const dynamicStyle = {
       backgroundColor: this.state.bgColor
     };
+    const { title, subTitle, accessory } = this.props;
+    const children = [];
+    const titleCmp = (
+      <div className="s-cell-content-title" key="title">
+        {this.props.title}
+      </div>
+    );
+    const subTitleCmp = (
+      <div className="s-cell-content-subtitle" key="subTitle">
+        {this.props.subTitle}
+      </div>
+    );
+    const accessoryCmp = accessory && (
+      <div className="s-cell-accessory" key="accessory">
+        <SIcon icon={"icon-arrow-right"} color={'gray'} fontSize={'20px'}></SIcon>
+      </div>
+    );
+    title && children.push(titleCmp);
+    subTitle && children.push(subTitleCmp);
     return (
       <div
         className="s-cell"
@@ -43,8 +69,10 @@ class SCell extends React.PureComponent<Props, State> {
         onClick={this.handleClick}
         onTouchStart={this.handleTouchStart}
         onTouchEnd={this.handleTouchEnd}>
-        <div className="s-cell-title">{this.props.title}</div>
-        <div className="s-cell-subtitle">{this.props.subTitle}</div>
+        <div className="s-cell-content">
+          {children}
+        </div>
+        {accessoryCmp}
       </div>
     );
   }
@@ -55,7 +83,7 @@ class SCell extends React.PureComponent<Props, State> {
 
   private handleTouchStart(e: TouchEvent<HTMLDivElement>): void {
     this.setState({
-      bgColor: increaseBrightness(this.props.bgColor || '#fff', -0.1)
+      bgColor: this.props.hightlightBgColor
     });
   }
 

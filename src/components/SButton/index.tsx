@@ -11,6 +11,10 @@ interface Props {
   bgColor?: string;
   // 标题
   title: string;
+  // 图标
+  icon?: string;
+  //
+  fontSize?: string;
   // 点击事件
   onClick?: (event: MouseEvent<HTMLDivElement>) => void;
  };
@@ -39,8 +43,10 @@ class SButton extends React.Component<Props, State> {
   }
 
   public render() {
+    const { color, fontSize, icon } = this.props;
     const dynamicStyle = {
-      color: this.props.color || 'red',
+      color: color || 'red',
+      fontSize: fontSize || '14px',
       backgroundColor: this.state.bgColor || '#fff'
     };
     return (
@@ -50,7 +56,7 @@ class SButton extends React.Component<Props, State> {
         onClick={this.handleClick}
         onTouchStart={this.handleTouchStart}
         onTouchEnd={this.handleTouchEnd}>
-        <SIcon icon={"icon-avatar"} color={'teal'}></SIcon>
+        { icon && <SIcon icon={icon} color={ dynamicStyle.color } fontSize={ dynamicStyle.fontSize }></SIcon> }
         <span>{this.props.title}</span>
       </div>
     );

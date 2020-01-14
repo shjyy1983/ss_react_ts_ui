@@ -4,7 +4,7 @@
  * @param {*} hex  如：#ff00ff
  * @param {*} percent 如：0.2
  */
-function increaseBrightness(hex: string, percent = 0.2) {
+function increaseBrightness(hex: string, percent = 0.2): string {
   // strip the leading # if it's there
   hex = hex.replace(/^\s*#|\s*$/g, '');
   // convert 3 char codes --> 6, e.g. `E0F` --> `EE00FF`
@@ -21,6 +21,76 @@ function increaseBrightness(hex: string, percent = 0.2) {
 }
 
 
+// let throttle = (fn, delay) => {
+//   let context, args, lastTime, nowTime, timer
+//   let execute = () => {
+//     fn.apply(context, args)
+//     lastTime = nowTime
+//   }
+
+//   let reFn = function () {
+//     context = this
+//     args = arguments
+//     nowTime = Date.now()
+//     if (timer) {
+//       clearTimeout(timer)
+//       timer = null
+//     }
+//     if (lastTime) {
+//       let diff = delay - (nowTime - lastTime)
+//       if (diff < 0) {
+//         execute()
+//       } else {
+//         timer = setTimeout(() => {
+//           execute()
+//         }, diff)
+//       }
+//     } else {
+//       execute()
+//     }
+//   }
+//   return reFn
+// }
+
+// https://github.com/boycgit/ts-debounce-throttle.git
+type SAnyFunction = (...args: any[]) => void;
+function throttle(fn: SAnyFunction, delay: number): SAnyFunction {
+  let context: any;
+  let args: any[];
+  let lastTime: number;
+  let nowTime: number;
+  let timer: any;
+  const execute = () => {
+    fn.apply(context, args);
+    lastTime = nowTime;
+  };
+  const reFn = function (..._args: any[]) {
+    context = this;
+    args = _args;
+    nowTime = Date.now();
+
+    if (timer) {
+      clearTimeout(timer);
+      timer = null;
+    }
+    if (lastTime) {
+      const diff = delay - (nowTime - lastTime);
+      if (diff < 0) {
+        execute();
+      } else {
+        timer = setTimeout(() => {
+          execute();
+        }, diff);
+      }
+    } else {
+      execute();
+    }
+  };
+  return reFn;
+}
+
+
 export {
-  increaseBrightness
+  increaseBrightness,
+  throttle
 };

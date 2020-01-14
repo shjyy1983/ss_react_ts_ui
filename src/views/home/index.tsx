@@ -25,9 +25,8 @@ class Home extends React.PureComponent<IProps, IState> {
   }
   public render() {
     const datas = service.getMenuDatas();
-    console.log(datas);
     const listCells = datas.map(item => {
-      return (<SCell key={item.id} title={item.title} bgColor={"#f00"} onClick={e => this.navigateTo(item.path)}></SCell>);
+      return (<SCell key={item.id} title={item.title} subTitle={item.subTitle} bgColor={"#fff"} hightlightBgColor={'#eee'} accessory onClick={e => this.navigateTo(item.path)}></SCell>);
     });
 
     return (
