@@ -27,10 +27,12 @@ declare namespace SSReactUI {
 
   // SButton
   interface SButtonProps extends SSReactLibs.ComponentProps<{}> {
-    onClick?(e: React.SyntheticEvent<HTMLButtonElement>): void;
+    onClick?(e: React.SyntheticEvent<HTMLDivElement>): void;
     color?: string;
     bgColor?: string;
     title?: string;
+    fontSize?: string;
+    icon?: string;
   }
   export class SButton extends SSReactLibs.Component<SButtonProps, {}> {
   }
