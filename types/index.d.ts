@@ -8,6 +8,10 @@ declare namespace SSReactLibs {
 
   class PureComponent<P, S> extends React.PureComponent<P, S> {
   }
+
+  class FunctionComponent<P> extends React.FunctionComponent<P> {
+
+  }
 }
 
 declare namespace SSReactUI {
@@ -34,9 +38,19 @@ declare namespace SSReactUI {
   }
   export class SButton extends SSReactLibs.Component<SButtonProps, {}> {
   }
+
+  // SIcon
+  interface SIconProps extends SSReactLibs.FunctionComponent<{}> {
+    icon: string;
+    color?: string;
+    fontSize?: string;
+  }
+  export class SIcon extends SSReactLibs.FunctionComponent<SIconProps, {}> {
+  }
 }
 
 declare module "ss_react_ts_ui" {
   export import SButton = SSReactUI.SButton
   export import SInput = SSReactUI.SInput
+  export import SIcon = SSReactUI.SIcon
 }
