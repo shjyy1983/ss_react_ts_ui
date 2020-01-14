@@ -8,10 +8,6 @@ declare namespace SSReactLibs {
 
   class PureComponent<P, S> extends React.PureComponent<P, S> {
   }
-
-  class FunctionComponent<P> extends React.FunctionComponent<P> {
-
-  }
 }
 
 declare namespace SSReactUI {
@@ -40,12 +36,12 @@ declare namespace SSReactUI {
   }
 
   // SIcon
-  interface SIconProps extends SSReactLibs.FunctionComponent<{}> {
+  interface SIconProps extends SSReactLibs.ComponentProps<{}> {
     icon: string;
     color?: string;
     fontSize?: string;
   }
-  export class SIcon extends SSReactLibs.FunctionComponent<SIconProps, {}> {
+  export class SIcon extends SSReactLibs.PureComponent<SIconProps, {}> {
   }
 }
 
