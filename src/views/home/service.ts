@@ -11,7 +11,17 @@ const service = {
     }
     return list;
 
+  },
 
+  getMenuDatas(): Array<any> {
+    const list: Array<any> = [
+      {
+        id: 1001,
+        title: '测试SButton',
+        path: '/testButton'
+      }
+    ];
+    return list;
   }
 };
 

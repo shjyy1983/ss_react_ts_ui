@@ -2,9 +2,8 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import {Route, BrowserRouter, HashRouter, Switch, Redirect} from "react-router-dom";
-import {Home} from '@views/home';
-import {Page1} from '@views/page1';
-import {Page2} from '@views/page2';
+import Home from '@views/home';
+import TestButton from '@views/testButton';
 import {PageError} from '@views/error';
 import '@/assets/less/app.less';
 
@@ -22,8 +21,7 @@ const routes = (
         <Redirect to="/home"></Redirect>
       }></Route>
       <Route exact path="/home" component={Home}></Route>
-      <Route exact path="/page1" component={Page1}></Route>
-      <Route exact path="/page2" component={Page2}></Route>
+      <Route exact path="/testButton" component={TestButton}></Route>
       <Route exact path="/page3" render={() => {
         return (
           <div>Hello page3</div>

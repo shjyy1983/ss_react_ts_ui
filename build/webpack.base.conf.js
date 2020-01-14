@@ -2,11 +2,12 @@
  * @Author: SHEN
  * @Date: 2020-01-01 15:14:31
  * @Last Modified by: SHEN
- * @Last Modified time: 2020-01-13 10:21:25
+ * @Last Modified time: 2020-01-13 19:16:09
  */
 'use strict'
 const path = require('path')
 const utils = require('./utils')
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 module.exports = {
   // 基础目录，绝对路径，用于从配置中解析入口起点，以下配置为项目根目录
@@ -40,7 +41,8 @@ module.exports = {
 						loader: 'ts-loader',
 					}
 				],
-				include: path.resolve(__dirname, "../src/"),
+        include: path.resolve(__dirname, "../src/"),
+        exclude: /node_modules/
 			},
       {
         test: /\.css|\.less$/,
@@ -78,5 +80,6 @@ module.exports = {
     ]
   },
   plugins: [
+    new ForkTsCheckerWebpackPlugin()
   ]
 };

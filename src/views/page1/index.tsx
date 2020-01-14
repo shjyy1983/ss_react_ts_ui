@@ -7,6 +7,7 @@ interface Props {
 class Page1 extends React.PureComponent<Props> {
   constructor(props: Props) {
     super(props);
+    this.demo();
   }
   render() {
     return (
@@ -14,6 +15,8 @@ class Page1 extends React.PureComponent<Props> {
         hello page1
       </div>
     );
+  }
+  demo() {
   }
 }
 

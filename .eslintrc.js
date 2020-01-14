@@ -32,6 +32,7 @@ module.exports = {
     '@typescript-eslint/no-empty-interface': 'warn',
     '@typescript-eslint/interface-name-prefix': 'warn',
     '@typescript-eslint/no-var-requires': 'warn',
+    '@typescript-eslint/explicit-function-return-type': 'off',
     'semi': 'warn' // 不建议使用逗号，如果有则 warn
   }
 }

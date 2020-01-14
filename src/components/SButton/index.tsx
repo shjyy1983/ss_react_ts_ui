@@ -1,10 +1,10 @@
 import React, { MouseEvent, TouchEvent } from 'react';
 import { increaseBrightness } from '@utils/func';
-import SIcon from '@components/SIcon';
+import SIcon from '../SIcon';
 import './style.less';
 
 // 使用泛型进行 Props 的类型定义
-interface IProps {
+interface Props {
   // 文本色
   color?: string;
   // 背景色
@@ -16,16 +16,16 @@ interface IProps {
  };
 
 // 定义一个接口,规范数据类型,通过泛型传入到类中
- interface IState {
+ interface State {
   bgColor: string;
  }
 
-class SButton extends React.Component<IProps, IState> {
-  public readonly state: Readonly<IState> = {
+class SButton extends React.Component<Props, State> {
+  public readonly state: Readonly<State> = {
     bgColor: this.props.bgColor
   }
 
-  public constructor(props: IProps) {
+  public constructor(props: Props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
     this.handleTouchStart = this.handleTouchStart.bind(this);

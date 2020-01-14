@@ -21,41 +21,32 @@ class Home extends React.PureComponent<IProps, IState> {
     this.state = {
       count: 0
     };
-    this.handleClick = this.handleClick.bind(this);
     this.navigateTo = this.navigateTo.bind(this);
   }
   public render() {
-    const datas = service.getDatas();
+    const datas = service.getMenuDatas();
+    console.log(datas);
     const listCells = datas.map(item => {
-      return (<SCell key={item.id} title={item.title} subTitle={item.subTitle}></SCell>);
+      return (<SCell key={item.id} title={item.title} bgColor={"#f00"} onClick={e => this.navigateTo(item.path)}></SCell>);
     });
 
     return (
       <div className="page page-home">
         <div className="page-content">
-          home {this.state.count}
+          {/* home {this.state.count}
           <SButton title={'hello'} color={'#fff'} bgColor={'#54a7fd'} onClick={this.handleClick}></SButton>
-          <SButton title={'导航'} color={'#fff'} bgColor={'#54a7fd'} onClick={this.navigateTo}></SButton>
-          <SIcon icon={"icon-card"}></SIcon>
+          <SButton title={'导航'} color={'#fff'} bgColor={'#54a7fd'} onClick={this.navigateTo}></SButton> */}
+          {/* <SIcon icon={"icon-card"}></SIcon> */}
           {listCells}
-          <SInput placeholder={"输入..."} default={"abc"} autofocus={false} width={'200px'} padding={'0 4px'} fontSize={14}></SInput>
+          {/* <SInput placeholder={"输入..."} default={"abc"} autofocus={false} width={'200px'} padding={'0 4px'} fontSize={14}></SInput> */}
         </div>
       </div>
     );
   }
 
-  private handleClick(e: MouseEvent<HTMLDivElement>): void {
-    this.setState({
-      count: this.state.count + 1
-    });
-  }
-
-  private navigateTo(): void {
-    this.props.history.push('/page1');
+  private navigateTo(path: string): void {
+    this.props.history.push(path);
   }
 }
 
-export {
-  IProps,
-  Home
-};
+export default Home;

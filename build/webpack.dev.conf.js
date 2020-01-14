@@ -2,7 +2,7 @@
  * @Author: SHEN
  * @Date: 2020-01-03 09:31:33
  * @Last Modified by: SHEN
- * @Last Modified time: 2020-01-13 11:02:05
+ * @Last Modified time: 2020-01-13 19:11:07
  */
 'use strict'
 const utils = require('./utils')
@@ -33,7 +33,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     contentBase: false, // since we use CopyWebpackPlugin.
     hot: true, // 开启热模块加载
     quiet: true,
-    clientLogLevel: 'warning', // console 控制台显示的消息，可能的值有 none, error, warning 或者 info
+    clientLogLevel: 'info', // console 控制台显示的消息，可能的值有 none, error, warning 或者 info
     historyApiFallback: {
       rewrites: [
         { from: /.*/, to: path.posix.join(config.dev.assetsPublicPath, 'index.html') },
