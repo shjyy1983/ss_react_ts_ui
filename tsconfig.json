@@ -20,6 +20,7 @@
       "@/*": ["*"],
       "@components/*": ["components/*"],
       "@views/*": ["views/*"],
+      "@demos/*": ["demos/*"],
       "@utils/*": ["utils/*"],
       "assets/*": ["assets/*"]
     }

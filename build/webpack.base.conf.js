@@ -2,7 +2,7 @@
  * @Author: SHEN
  * @Date: 2020-01-01 15:14:31
  * @Last Modified by: SHEN
- * @Last Modified time: 2020-01-14 10:43:30
+ * @Last Modified time: 2020-01-19 10:35:21
  */
 'use strict'
 const path = require('path')
@@ -25,6 +25,7 @@ module.exports = {
       '@': path.resolve(__dirname, '../src'),
       '@components':path.resolve(__dirname,'../src/components'),
       '@views':path.resolve(__dirname,'../src/views'),
+      '@demos':path.resolve(__dirname,'../src/demos'),
       '@utils':path.resolve(__dirname,'../src/utils'),
       'assets':path.resolve(__dirname,'../src/assets')
     }

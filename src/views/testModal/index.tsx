@@ -1,12 +1,10 @@
 import React, { MouseEvent, ReactElement } from 'react';
 import SButton from '@components/SButton';
-import { throttle } from '@utils/func';
+import SModal from '@components/SModal';
 
-interface Props {}
-interface State {}
 
-class TestButton extends React.PureComponent<Props, State> {
-  constructor(props: Props) {
+class TestModal extends React.PureComponent<{}, {}> {
+  constructor(props: {}) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
   }
@@ -14,14 +12,14 @@ class TestButton extends React.PureComponent<Props, State> {
     return (
       <div className="page page-test-button">
         <div className="page-content">
-          <SButton title={'hello'} color={'#fff'} bgColor={'#54a7fd'} throttleDelay={2000} fontSize={'14px'} icon={"icon-email"} onClick={this.handleClick}></SButton>
+          <SButton title={'点击显示Modal'} width={'100px'} color={'#fff'} bgColor={'#54a7fd'} fontSize={'14px'} onClick={this.handleClick}></SButton>
         </div>
       </div>
     );
   }
   private handleClick(e: MouseEvent<HTMLDivElement>) {
-    console.log(e);
+
   }
 }
 
-export default TestButton;
+export default TestModal;
