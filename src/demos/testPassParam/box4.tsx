@@ -1,9 +1,9 @@
 import React, { MouseEvent } from 'react';
-import TestRef from './index';
+import TestPassParam from './index';
 import './style.less';
 
 interface Props {
-  parent: TestRef; // 父组件引用
+  parent: TestPassParam; // 父组件引用
 }
 interface State {}
 

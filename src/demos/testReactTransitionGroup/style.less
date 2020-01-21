@@ -1,26 +1,65 @@
+.page-test-react-transition-group {
+  display: flex;
+  flex-direction: column;
+  .some-box1, .some-box2 {
+    display: block;
+    width: 100px;
+    height: 100px;
+    font-size: 20px;
+    background-color: gray;
+  }
+  .s-button {
+    margin-top: 10px;
+  }
 
-.some-box1 {
-  display: block;
+  .fade-enter {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  .fade-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 1000ms, transform 1000ms;
+  }
+  .fade-exit {
+    opacity: 1;
+  }
+  .fade-exit-active {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 1000ms, transform 1000ms;
+  }
+
+
+}
+
+.el-notification {
+  position: fixed;
   width: 100px;
   height: 100px;
-  font-size: 20px;
-  background-color: gray;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 6px;
+  right: 16px;
+  background-color: #eee;
+  transition: opacity 0.3s, transform 0.3s, right 0.3s, top 0.4s;
+  overflow: hidden;
 }
-
-.fade-enter {
+.el-notification-fade-entering {
+  transform: translateX(100px);
+  right: 0;
   opacity: 0;
-  transform: scale(0.9);
 }
-.fade-enter-active {
-  opacity: 1;
-  transform: translateX(0);
-  transition: opacity 1000ms, transform 1000ms;
-}
-.fade-exit {
+.el-notification-fade-entered {
+  transform: translateX(0px);
+  right: 0;
   opacity: 1;
 }
-.fade-exit-active {
+.el-notification-fade-exiting {
+  transform: translateX(100px);
+  right: 0;
   opacity: 0;
-  transform: scale(0.9);
-  transition: opacity 1000ms, transform 1000ms;
+}
+.el-notification-fade-exited {
+  opacity: 0;
 }

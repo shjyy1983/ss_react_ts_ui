@@ -1,19 +1,21 @@
 import React, { MouseEvent } from 'react';
-import  "./style.less";
+import Box1 from './box1';
 
-interface Props {
-  name: string;
-}
+interface Props {}
 interface State {}
 
+/**
+ * https://reactjs.org/docs/react-api.html#reactfragment
+ */
 class Page extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
   }
   render() {
-    const { name } = this.props;
     return (
-      <div className="box2">{name}</div>
+      <div className="page-test-fragment">
+        <Box1></Box1>
+      </div>
     );
   }
 }

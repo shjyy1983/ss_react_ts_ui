@@ -20,7 +20,7 @@ class TestButton extends React.PureComponent<{}, {}> {
   }
   private handleClick(e: MouseEvent<HTMLDivElement>) {
     console.log(SMessageBox);
-    SMessageBox.alert();
+    SMessageBox.alert('title');
   }
 }
 

@@ -1,9 +1,6 @@
 import React, { MouseEvent } from 'react';
-import  "./style.less";
 
-interface Props {
-  name: string;
-}
+interface Props {}
 interface State {}
 
 class Page extends React.Component<Props, State> {
@@ -11,9 +8,8 @@ class Page extends React.Component<Props, State> {
     super(props);
   }
   render() {
-    const { name } = this.props;
     return (
-      <div className="box2">{name}</div>
+      <div className="box">box</div>
     );
   }
 }

@@ -1,50 +1,40 @@
 import React, { MouseEvent } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import SMask from '@components/SMask';
 import './style.less';
 
 interface Props {
-  title?: string;
-  willUnmount?: () => void;
-}
-
-interface State {
   visible: boolean;
+  hideMask?: (v: boolean) => void;
 }
+interface State {}
 
-class SMessageBox extends React.PureComponent<Props, State> {
+class Box extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
-    this.state = {
-      visible: false
-    };
     this.handleHide = this.handleHide.bind(this);
     this.handleContentClick = this.handleContentClick.bind(this);
-    this.onExited = this.onExited.bind(this);
-  }
-  componentDidMount() {
-    this.setState({
-      visible: true
-    });
+
+    this.onEnter = this.onEnter.bind(this);
+    this.onExit = this.onExit.bind(this);
   }
   render() {
-    const { children, title } = this.props;
-    const { visible } = this.state;
-    const maskComp = (
-      <SMask visible={visible}></SMask>
-    );
+    const { visible, children } = this.props;
     return (
-      <div className="s-message-box">
-        {maskComp}
+      <div>
+        <CSSTransition in={visible} timeout={300} classNames="mask mask" unmountOnExit>
+          <div></div>
+        </CSSTransition>
+
         <CSSTransition
           in={visible}
           timeout={500}
           classNames="alert alert"
           unmountOnExit
-          onExited={this.onExited}>
+          onEnter={this.onEnter}
+          onExit={this.onExit}>
           <div className="msg-box-content-wrapper"  onClick={this.handleHide}>
             <div className="msg-box-content" onClick={e => this.handleContentClick(e)}>
-              <h1>{title}</h1>
+              {children}
             </div>
           </div>
         </CSSTransition>
@@ -52,17 +42,17 @@ class SMessageBox extends React.PureComponent<Props, State> {
     );
   }
   handleHide() {
-    this.setState({
-      visible: false
-    });
+    this.props.hideMask(true);
   }
   handleContentClick(e: MouseEvent) {
     e.stopPropagation();
     console.log('handleContentClick');
   }
-  onExited(node: HTMLElement) {
-    this.props.willUnmount();
+  onEnter(node: HTMLElement, isAppearing: boolean) {
+    console.log('onEnter', isAppearing);
+  }
+  onExit(node: HTMLElement) {
+    console.log('onExit');
   }
 }
-
-export default SMessageBox;
+export default Box;

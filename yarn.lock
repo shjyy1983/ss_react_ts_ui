@@ -695,6 +695,10 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
+"@babel/standalone@^7.8.3":
+  version "7.8.3"
+  resolved "https://registry.npm.taobao.org/@babel/standalone/download/@babel/standalone-7.8.3.tgz#0674730a8c5fbb9352de5342bf0c0c040d658380"
+
 "@babel/template@^7.4.0", "@babel/template@^7.8.0":
   version "7.8.0"
   resolved "https://registry.npmjs.org/@babel/template/-/template-7.8.0.tgz#a32f57ad3be89c0fa69ae87b53b4826844dc6330"
@@ -998,6 +1002,10 @@
 "@types/json-schema@^7.0.3":
   version "7.0.4"
   resolved "https://registry.npm.taobao.org/@types/json-schema/download/@types/json-schema-7.0.4.tgz#38fd73ddfd9b55abb1e1b2ed578cb55bd7b7d339"
+
+"@types/marked@^0.7.2":
+  version "0.7.2"
+  resolved "https://registry.npm.taobao.org/@types/marked/download/@types/marked-0.7.2.tgz#1393f076773b55cc7078c0fbeb86a497c69db97e"
 
 "@types/minimatch@*":
   version "3.0.3"
@@ -5073,6 +5081,10 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
+marked@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.npm.taobao.org/marked/download/marked-0.8.0.tgz#ec5c0c9b93878dc52dd54be8d0e524097bd81a99"
+
 math-expression-evaluator@^1.2.14:
   version "1.2.17"
   resolved "https://registry.npm.taobao.org/math-expression-evaluator/download/math-expression-evaluator-1.2.17.tgz#de819fdbcd84dccd8fae59c6aeb79615b9d266ac"
@@ -6440,6 +6452,13 @@ raw-body@2.4.0:
     http-errors "1.7.2"
     iconv-lite "0.4.24"
     unpipe "1.0.0"
+
+raw-loader@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.npm.taobao.org/raw-loader/download/raw-loader-4.0.0.tgz#d639c40fb9d72b5c7f8abc1fb2ddb25b29d3d540"
+  dependencies:
+    loader-utils "^1.2.3"
+    schema-utils "^2.5.0"
 
 react-dom@^16.12.0:
   version "16.12.0"

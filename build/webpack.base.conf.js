@@ -2,7 +2,7 @@
  * @Author: SHEN
  * @Date: 2020-01-01 15:14:31
  * @Last Modified by: SHEN
- * @Last Modified time: 2020-01-19 10:35:21
+ * @Last Modified time: 2020-01-20 23:12:39
  */
 'use strict'
 const path = require('path')
@@ -59,6 +59,10 @@ module.exports = {
           limit: 20 * 1024, // 小于10K的图片转成base64编码的dataURL字符串写到代码中
           name: utils.assetsPath('img/[name].[hash:7].[ext]') // 其他的图片转移到静态资源文件夹，hash:7 代表 7 位数的 hash
         }
+      },
+      {
+        test: /\.md$/,
+        loader: 'raw-loader'
       },
       {
         test: /\.html$/,

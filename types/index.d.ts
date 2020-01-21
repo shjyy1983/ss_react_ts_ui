@@ -45,10 +45,19 @@ declare namespace SSReactUI {
   }
   export class SIcon extends SSReactLibs.PureComponent<SIconProps, {}> {
   }
+
+  // SMessageBox
+  interface MsgBoxOptions {
+    title?: string;
+  }
+  export const SMessageBox: {
+    alert(props?: NextOptions): Promise<void>;
+  };
 }
 
 declare module "ss_react_ts_ui" {
   export import SButton = SSReactUI.SButton
   export import SInput = SSReactUI.SInput
   export import SIcon = SSReactUI.SIcon
+  export import SMessageBox = SSReactUI.SMessageBox
 }

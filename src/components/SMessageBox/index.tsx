@@ -8,8 +8,6 @@ function next(props: Record<string, any>): Promise<any> {
     const div = document.createElement('div');
     document.body.appendChild(div);
 
-    console.log('here');
-
     const component = React.createElement(MessageBox, Object.assign({}, props, {
       promise: { resolve, reject },
       willUnmount: () => {
@@ -23,8 +21,10 @@ function next(props: Record<string, any>): Promise<any> {
   });
 }
 
-function alert() {
-  return next({});
+function alert(title: string) {
+  return next({
+    title
+  });
 }
 
 export default {
