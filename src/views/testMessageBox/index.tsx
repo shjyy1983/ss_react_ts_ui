@@ -1,6 +1,5 @@
 import React, { MouseEvent, ReactElement } from 'react';
-import SButton from '@components/SButton';
-import SMessageBox from '@components/SMessageBox';
+import { SButton, SMessageBox } from '@components/index';
 import { throttle } from '@utils/func';
 
 

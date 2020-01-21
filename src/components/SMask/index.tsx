@@ -16,7 +16,7 @@ class Page extends React.Component<Props, State> {
   render() {
     const { visible } = this.props;
     return (
-      <CSSTransition in={visible} timeout={300} classNames="mask mask" unmountOnExit onClick={this.handleClick}>
+      <CSSTransition in={visible} timeout={300} classNames="mask fade" unmountOnExit onClick={this.handleClick}>
         <div className="s-mask"></div>
       </CSSTransition>
     );

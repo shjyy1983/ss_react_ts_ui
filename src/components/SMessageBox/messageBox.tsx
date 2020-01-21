@@ -42,7 +42,7 @@ class SMessageBox extends React.PureComponent<Props, State> {
           classNames="alert alert"
           unmountOnExit
           onExited={this.onExited}>
-          <div className="msg-box-content-wrapper"  onClick={this.handleHide}>
+          <div className="msg-box-content-wrapper" onClick={this.handleHide}>
             <div className="msg-box-content" onClick={e => this.handleContentClick(e)}>
               <h1>{title}</h1>
             </div>
