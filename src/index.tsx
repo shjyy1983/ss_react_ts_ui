@@ -4,9 +4,11 @@
 import SButton from '@components/SButton';
 import SIcon from '@components/SIcon';
 import SInput from '@components/SInput';
+import SMessageBox from '@components/SMessageBox';
 
 export default {
   SButton,
   SIcon,
-  SInput
+  SInput,
+  SMessageBox
 };

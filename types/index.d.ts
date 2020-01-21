@@ -48,10 +48,10 @@ declare namespace SSReactUI {
 
   // SMessageBox
   interface MsgBoxOptions {
-    title?: string;
+    message?: string;
   }
   export const SMessageBox: {
-    alert(props?: MsgBoxOptions): Promise<void>;
+    alert(title: string, props?: MsgBoxOptions): Promise<void>;
   };
 }
 
