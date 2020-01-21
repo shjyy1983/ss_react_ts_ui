@@ -51,7 +51,7 @@ declare namespace SSReactUI {
     title?: string;
   }
   export const SMessageBox: {
-    alert(props?: NextOptions): Promise<void>;
+    alert(props?: MsgBoxOptions): Promise<void>;
   };
 }
 
