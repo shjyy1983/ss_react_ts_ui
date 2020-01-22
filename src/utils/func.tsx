@@ -20,38 +20,6 @@ function increaseBrightness(hex: string, percent = 0.2): string {
      ((0 | (1 << 8) + b + (256 - b) * percent).toString(16)).substr(1);
 }
 
-
-// let throttle = (fn, delay) => {
-//   let context, args, lastTime, nowTime, timer
-//   let execute = () => {
-//     fn.apply(context, args)
-//     lastTime = nowTime
-//   }
-
-//   let reFn = function () {
-//     context = this
-//     args = arguments
-//     nowTime = Date.now()
-//     if (timer) {
-//       clearTimeout(timer)
-//       timer = null
-//     }
-//     if (lastTime) {
-//       let diff = delay - (nowTime - lastTime)
-//       if (diff < 0) {
-//         execute()
-//       } else {
-//         timer = setTimeout(() => {
-//           execute()
-//         }, diff)
-//       }
-//     } else {
-//       execute()
-//     }
-//   }
-//   return reFn
-// }
-
 // https://github.com/boycgit/ts-debounce-throttle.git
 type SAnyFunction = (...args: any[]) => void;
 function throttle(fn: SAnyFunction, delay: number): SAnyFunction {
@@ -89,8 +57,13 @@ function throttle(fn: SAnyFunction, delay: number): SAnyFunction {
   return reFn;
 }
 
+function strRemoveUnit(str: string, units: string[] = ['px', '%', 'rem']): number {
+  const reg = new RegExp(`${units.join('|')}`, 'ig');
+  return parseFloat(str.replace(reg, ''));
+}
 
 export {
   increaseBrightness,
-  throttle
+  throttle,
+  strRemoveUnit
 };

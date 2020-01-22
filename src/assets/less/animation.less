@@ -50,3 +50,69 @@
   transition: transform @animationDuration ease-in-out;
 }
 
+// present top
+.present-top-enter {
+  transform: translateY(-100%);
+}
+.present-top-enter-active {
+  transform: translateY(0);
+  transition: transform @animationDuration ease-in-out;
+}
+.present-top-exit {
+  transform: translateY(0);
+}
+.present-top-exit-active {
+  transform: translateY(-100%);
+  transition: transform @animationDuration ease-in-out;
+}
+
+// present left
+.present-left-enter {
+  transform: translateX(-100%);
+}
+.present-left-enter-active {
+  transform: translateX(0);
+  transition: transform @animationDuration ease-in-out;
+}
+.present-left-exit {
+  transform: translateX(0);
+}
+.present-left-exit-active {
+  transform: translateX(-100%);
+  transition: transform @animationDuration ease-in-out;
+}
+
+// present right
+.present-right-enter {
+  transform: translateX(100%);
+}
+.present-right-enter-active {
+  transform: translateX(0);
+  transition: transform @animationDuration ease-in-out;
+}
+.present-right-exit {
+  transform: translateX(0);
+}
+.present-right-exit-active {
+  transform: translateX(100%);
+  transition: transform @animationDuration ease-in-out;
+}
+
+// present center
+.present-center-enter {
+  opacity: 0;
+  transform: scale(0.5);
+}
+.present-center-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity @animationDuration, transform @animationDuration;
+}
+.present-center-exit {
+  opacity: 1;
+}
+.present-center-exit-active {
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity @animationDuration, transform @animationDuration;
+}
