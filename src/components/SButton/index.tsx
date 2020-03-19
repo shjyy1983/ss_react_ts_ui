@@ -29,6 +29,7 @@ interface Props {
  }
 
 class SButton extends React.Component<Props, State> {
+  // state 设置为只读类型，防止直接更新 state 
   public readonly state: Readonly<State> = {
     bgColor: this.props.bgColor
   }

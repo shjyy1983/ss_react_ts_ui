@@ -3,6 +3,8 @@ import './hello.less';
 import logo from '../assets/images/1.png';
 import foxLogo from '../assets/images/fox.jpg';
 
+console.log('===========');
+
 interface HelloProps { compiler: string; framework: string }
 
 // 'HelloProps' describes the shape of props.

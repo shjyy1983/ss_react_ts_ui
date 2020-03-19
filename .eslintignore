@@ -1,6 +1,7 @@
 /build/
 /config/
 /dist/
-/*.js
+/dist_demo/
+# /*.js
 /*.json
 /src/assets/

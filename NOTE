@@ -40,5 +40,14 @@ https://github.com/Yangfan2016/react-yan-progress/tree/master
 https://github.com/WsmDyj/Element-source
 
 
+https://elemefe.github.io/element-react/index#/zh-CN/select
+
 [tmp]
 https://segmentfault.com/a/1190000015326439
+
+
+
+[注意]
+marked 和 TestBabelStandalone 引起了 ie11 的报错，所以需要去掉这些
+
+postcss 无效是因为 package.json browserslist 没有配置对

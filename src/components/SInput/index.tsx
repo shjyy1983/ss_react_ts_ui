@@ -1,28 +1,55 @@
 import React, { FocusEvent } from 'react';
 import './style.less';
 
-interface IProps {
+interface Props {
+  // placeholder
   placeholder?: string;
+  // 默认值
   default?: string;
+  // 是否自动焦点
   autofocus?: boolean;
+  // 宽度
   width?: string;
+  // 高度
   height?: string;
+  // 输入框内边距
   padding?: string;
+  // 字体大小
   fontSize?: number;
+  // 边框宽度
+  borderWidth?: number;
+  // 边框颜色
+  borderColor?: string;
+  // 是否有清空按钮
+  clearable?: boolean;
 }
 
-interface IState {
+interface State {
   value: string;
 }
 
-class SInput extends React.PureComponent<IProps, IState> {
+class SInput extends React.PureComponent<Props, State> {
+  // Props 默认值
+  static defaultProps = {
+    placeholder: '输入...',
+    default: '',
+    autofocus: false,
+    width: '100%',
+    height: '28px',
+    padding: '0 4px',
+    fontSize: '12px',
+    borderWidth: 1,
+    borderColor: '#333',
+    clearable: true
+  }
+
+  public readonly state: Readonly<State> = {
+    value: this.props.default
+  }
   private inputRef = React.createRef<HTMLInputElement>();
 
-  public constructor(props: IProps) {
+  public constructor(props: Props) {
     super(props);
-    this.state = {
-      value: ''
-    };
     this.handleFocus = this.handleFocus.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
   }
@@ -37,15 +64,17 @@ class SInput extends React.PureComponent<IProps, IState> {
   }
 
   public render() {
-    const { width, height, padding, fontSize } = this.props;
+    const { width, height, padding, fontSize, borderWidth, borderColor } = this.props;
+
     const dynamicStyle = {
-      width: width || '100%',
-      height: height || '32px'
+      width: width,
+      height: height,
+      border: borderWidth ? `${borderWidth}px solid ${borderColor}` : '0'
     };
 
     const dynamicInputStyle = {
-      padding: padding || '0',
-      fontSize: fontSize || 14 + 'px'
+      padding: padding,
+      fontSize: fontSize + 'px'
     };
     return (
       <div className="s-input" style={dynamicStyle}>
@@ -58,12 +87,14 @@ class SInput extends React.PureComponent<IProps, IState> {
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
           onChange={e => this.setState({ value: e.target.value })}></input>
+
       </div>
     );
   }
 
   private handleFocus(e: FocusEvent<HTMLInputElement>): void {
     console.log(e);
+
   }
 
   private handleBlur(e: FocusEvent<HTMLInputElement>): void {

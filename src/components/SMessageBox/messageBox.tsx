@@ -1,6 +1,6 @@
 import React, { MouseEvent } from 'react';
-import { CSSTransition } from 'react-transition-group';
-import SMask from '@components/SMask';
+import { Position } from '@utils/definition';
+import SModal from '@components/SModal';
 import './style.less';
 
 interface Props {
@@ -28,27 +28,12 @@ class SMessageBox extends React.PureComponent<Props, State> {
     });
   }
   render() {
-    const { children, title } = this.props;
+    const { title } = this.props;
     const { visible } = this.state;
-    const maskComp = (
-      <SMask visible={visible}></SMask>
-    );
     return (
-      <div className="s-message-box">
-        {maskComp}
-        <CSSTransition
-          in={visible}
-          timeout={500}
-          classNames="alert alert"
-          unmountOnExit
-          onExited={this.onExited}>
-          <div className="msg-box-content-wrapper" onClick={this.handleHide}>
-            <div className="msg-box-content" onClick={e => this.handleContentClick(e)}>
-              <h1>{title}</h1>
-            </div>
-          </div>
-        </CSSTransition>
-      </div>
+      <SModal position={Position.Center} width={'300px'} height={'200px'} visible={visible} onHide={() => this.handleHide()}>
+        <h1 onClick={(e) => this.handleContentClick(e)}>{title}</h1>
+      </SModal>
     );
   }
   handleHide() {

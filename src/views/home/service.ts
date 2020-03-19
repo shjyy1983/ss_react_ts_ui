@@ -29,6 +29,16 @@ const service = {
         path: '/testTransition'
       },
       {
+        id: 1006,
+        title: '测试 SSelect',
+        path: '/testSelect'
+      },
+      {
+        id: 1007,
+        title: '测试 SInput',
+        path: '/testInput'
+      },
+      {
         id: 2001,
         title: '测试 Raf',
         path: '/testRaf'
@@ -112,6 +122,11 @@ const service = {
         title: '测试@babel/standalone',
         subTitle: '在浏览器环境中跑babel',
         path: '/testBabelStandalone'
+      },
+      {
+        id: 2016,
+        title: '测试react-click-outside',
+        path: '/testReactClickOutside'
       }
     ];
     return list;

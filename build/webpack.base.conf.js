@@ -2,7 +2,7 @@
  * @Author: SHEN
  * @Date: 2020-01-01 15:14:31
  * @Last Modified by: SHEN
- * @Last Modified time: 2020-01-20 23:12:39
+ * @Last Modified time: 2020-03-18 23:33:00
  */
 'use strict'
 const path = require('path')
@@ -35,13 +35,8 @@ module.exports = {
       {
 				test: /\.tsx?$/,
 				use: [
-					{
-						loader: 'babel-loader',
-					},
-					{
-						loader: 'ts-loader',
-					}
-				],
+          'babel-loader', 'ts-loader'
+        ],
         include: path.resolve(__dirname, "../src/"),
         exclude: /node_modules/
 			},

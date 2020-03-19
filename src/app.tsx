@@ -1,4 +1,4 @@
-
+import 'react-app-polyfill/ie9';
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { Route, BrowserRouter, HashRouter, Switch, Redirect } from "react-router-dom";
@@ -8,6 +8,8 @@ import TestMessageBox from '@views/testMessageBox';
 import TestModal from '@views/testModal';
 import TestView from '@views/testView';
 import TestTransition from '@views/testTransition';
+import TestSelect from '@views/testSelect';
+import TestInput from '@views/testInput';
 import { PageError } from '@views/error';
 
 import TestRaf from '@demos/testRaf';
@@ -23,16 +25,8 @@ import TestMemo from '@demos/testMemo';
 import TestChildren from '@demos/testChildren';
 import TestFragment from '@demos/testFragment';
 import TestForwardRef from '@demos/testForwardRef';
-import TestMarked from '@demos/testMarked';
-import TestBabelStandalone from '@demos/testBabelStandalone';
+import TestReactClickOutside from '@demos/testReactClickOutside';
 import '@/assets/less/app.less';
-
-// 使用默认的确认函数
-// const getUserConfirmation = function (message: string, callback: func) {
-//   const allowTransition = window.confirm(message);
-//   console.log('allowTransition', allowTransition);
-//   callback(allowTransition);
-// };
 
 const routes = (
   <HashRouter basename="/">
@@ -46,6 +40,8 @@ const routes = (
       <Route exact path="/testModal" component={TestModal}></Route>
       <Route exact path="/testView" component={TestView}></Route>
       <Route exact path="/testTransition" component={TestTransition}></Route>
+      <Route exact path="/testSelect" component={TestSelect}></Route>
+      <Route exact path="/testInput" component={TestInput}></Route>
 
       <Route exact path="/testRaf" component={TestRaf}></Route>
       <Route exact path="/testReactTransitionGroup" component={TestReactTransitionGroup}></Route>
@@ -60,8 +56,7 @@ const routes = (
       <Route exact path="/testChildren" component={TestChildren}></Route>
       <Route exact path="/testFragment" component={TestFragment}></Route>
       <Route exact path="/testForwardRef" component={TestForwardRef}></Route>
-      <Route exact path="/testMarked" component={TestMarked}></Route>
-      <Route exact path="/testBabelStandalone" component={TestBabelStandalone}></Route>
+      <Route exact path="/testReactClickOutside" component={TestReactClickOutside}></Route>
       <Route exact path="/page3" render={() => {
         return (
           <div>Hello page3</div>
@@ -71,5 +66,6 @@ const routes = (
     </Switch>
   </HashRouter>
 );
+
 
 ReactDOM.render(routes, document.getElementById("app"));

@@ -2,7 +2,7 @@
  * @Author: SHEN
  * @Date: 2020-01-03 09:31:33
  * @Last Modified by: SHEN
- * @Last Modified time: 2020-01-13 15:23:55
+ * @Last Modified time: 2020-01-22 15:07:42
  */
 'use strict'
 const utils = require('./utils')
@@ -19,7 +19,7 @@ const demoWebpackConfig = merge(baseWebpackConfig, {
   entry: {
     app: ["./src/app.tsx"]
   },
-  devtool: config.dev.devtool,
+  devtool: false, // config.dev.devtool, // 这个会巨量增加包大小，设置为 false 去掉调试信息
   output: {
     path: path.resolve(__dirname, '../dist_demo'),
     filename: utils.assetsPath('js/[name].[chunkhash].js'),
@@ -45,5 +45,33 @@ const demoWebpackConfig = merge(baseWebpackConfig, {
     })
   ]
 })
+
+
+//  如果开启了产品gzip压缩，则利用插件将构建后的产品文件进行压缩
+if (config.build.productionGzip) {
+  // 一个用于压缩的webpack插件
+  const CompressionWebpackPlugin = require('compression-webpack-plugin')
+
+  demoWebpackConfig.plugins.push(
+    new CompressionWebpackPlugin({
+      filename: '[path].gz[query]',
+      algorithm: 'gzip',
+      test: new RegExp(
+        '\\.(' +
+        config.build.productionGzipExtensions.join('|') +
+        ')$'
+      ),
+      threshold: 10240,
+      minRatio: 0.8
+    })
+  )
+}
+
+// 如果启动了report，则通过插件给出webpack构建打包后的产品文件分析报告
+if (config.build.bundleAnalyzerReport) {
+  const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+  demoWebpackConfig.plugins.push(new BundleAnalyzerPlugin())
+}
+
 module.exports = demoWebpackConfig
 
