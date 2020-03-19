@@ -62,7 +62,7 @@ module.exports = {
     // 不建议使用逗号，如果有则 warn
     'semi': 'warn',
     // 使用过期函数：警告
-    'node/no-deprecated-api': 'warn',
+    // 'node/no-deprecated-api': 'warn',
     '@typescript-eslint/no-empty-function': 'warn',
     '@typescript-eslint/no-empty-interface': 'warn',
     '@typescript-eslint/interface-name-prefix': 'warn',

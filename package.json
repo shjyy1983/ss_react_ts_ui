@@ -12,6 +12,9 @@
     "build": "cross-env NODE_ENV=production node build/build.js --gzip=true",
     "publish_npm": "./scripts/publish"
   },
+  "pre-commit": [
+    "lint"
+  ],
   "author": "SHEN",
   "license": "ISC",
   "repository": {
