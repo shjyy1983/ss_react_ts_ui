@@ -10,6 +10,7 @@ import TestView from '@views/testView';
 import TestTransition from '@views/testTransition';
 import TestSelect from '@views/testSelect';
 import TestInput from '@views/testInput';
+import TestIcon from '@views/testIcon';
 import { PageError } from '@views/error';
 
 import TestRaf from '@demos/testRaf';
@@ -42,6 +43,7 @@ const routes = (
       <Route exact path="/testTransition" component={TestTransition}></Route>
       <Route exact path="/testSelect" component={TestSelect}></Route>
       <Route exact path="/testInput" component={TestInput}></Route>
+      <Route exact path="/testIcon" component={TestIcon}></Route>
 
       <Route exact path="/testRaf" component={TestRaf}></Route>
       <Route exact path="/testReactTransitionGroup" component={TestReactTransitionGroup}></Route>
@@ -66,6 +68,5 @@ const routes = (
     </Switch>
   </HashRouter>
 );
-
 
 ReactDOM.render(routes, document.getElementById("app"));

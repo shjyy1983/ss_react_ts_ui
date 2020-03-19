@@ -1,4 +1,5 @@
-import React, { FocusEvent } from 'react';
+import React, { FocusEvent, TouchEvent, MouseEvent } from 'react';
+import SIcon from '@components/SIcon';
 import './style.less';
 
 interface Props {
@@ -52,6 +53,7 @@ class SInput extends React.PureComponent<Props, State> {
     super(props);
     this.handleFocus = this.handleFocus.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
+    this.handlerClear = this.handlerClear.bind(this);
   }
 
   public componentDidMount(){
@@ -76,6 +78,10 @@ class SInput extends React.PureComponent<Props, State> {
       padding: padding,
       fontSize: fontSize + 'px'
     };
+
+    const clearIconComp = this.state.value.length > 0 ?
+      <SIcon className={'s-input-clear'} icon={'clear'} fontSize={20} color={'#eee'} onClick={this.handlerClear}></SIcon> : '';
+
     return (
       <div className="s-input" style={dynamicStyle}>
         <input
@@ -87,7 +93,7 @@ class SInput extends React.PureComponent<Props, State> {
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
           onChange={e => this.setState({ value: e.target.value })}></input>
-
+        {clearIconComp}
       </div>
     );
   }
@@ -99,6 +105,12 @@ class SInput extends React.PureComponent<Props, State> {
 
   private handleBlur(e: FocusEvent<HTMLInputElement>): void {
     console.log(e);
+  }
+
+  private handlerClear(e: MouseEvent<HTMLDivElement>): void {
+    this.setState({
+      value: ''
+    });
   }
 }
 

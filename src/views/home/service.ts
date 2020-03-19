@@ -39,6 +39,11 @@ const service = {
         path: '/testInput'
       },
       {
+        id: 1008,
+        title: '测试 SIcon',
+        path: '/testIcon'
+      },
+      {
         id: 2001,
         title: '测试 Raf',
         path: '/testRaf'

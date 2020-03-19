@@ -1,6 +1,7 @@
 import React, { MouseEvent } from 'react';
 import STransition from '@components/Base/STransition';
 import SView from '@components/Base/SView';
+import "./style.less";
 
 interface Props {}
 interface State {
@@ -24,12 +25,12 @@ class Page extends React.Component<Props, State> {
       entering: { opacity: 1 },
       entered:  { opacity: 1 },
       exiting:  { opacity: 0 },
-      exited:  { opacity: 0 },
+      exited:  { opacity: 0 }
     };
     return (
       <div>
         <STransition transitionClass={transitionClass} in={visible}>
-          <div>jjjjjjjjjhhhhh</div>
+          <div className="somesomebox">jjjjjjjjjhhhhh</div>
         </STransition>
 
         <h1 onClick={() => this.handleClick()}>显示</h1>

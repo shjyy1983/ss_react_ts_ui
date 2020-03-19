@@ -6,67 +6,11 @@
   "description": "",
   "glyphs": [
     {
-      "icon_id": "50270",
-      "name": "plus",
-      "font_class": "ios7plusoutline",
-      "unicode": "e691",
-      "unicode_decimal": 59025
-    },
-    {
-      "icon_id": "464450",
-      "name": "keyboard",
-      "font_class": "keyboard",
-      "unicode": "e672",
-      "unicode_decimal": 58994
-    },
-    {
-      "icon_id": "549465",
-      "name": "voice",
-      "font_class": "voice",
-      "unicode": "e87c",
-      "unicode_decimal": 59516
-    },
-    {
-      "icon_id": "551966",
-      "name": "箭头",
-      "font_class": "arrow-right",
-      "unicode": "e60e",
-      "unicode_decimal": 58894
-    },
-    {
-      "icon_id": "584704",
-      "name": "qr",
-      "font_class": "qr",
-      "unicode": "e61a",
-      "unicode_decimal": 58906
-    },
-    {
-      "icon_id": "631228",
-      "name": "email",
-      "font_class": "email",
-      "unicode": "e67b",
-      "unicode_decimal": 59003
-    },
-    {
-      "icon_id": "706522",
-      "name": "weixin",
-      "font_class": "weixin",
-      "unicode": "e62e",
-      "unicode_decimal": 58926
-    },
-    {
-      "icon_id": "722170",
-      "name": "plus",
-      "font_class": "plussign",
-      "unicode": "e75a",
-      "unicode_decimal": 59226
-    },
-    {
-      "icon_id": "762092",
-      "name": "emoji_light发生的发生",
-      "font_class": "emojilight",
-      "unicode": "e600",
-      "unicode_decimal": 58880
+      "icon_id": "12025547",
+      "name": "clear",
+      "font_class": "clear",
+      "unicode": "e612",
+      "unicode_decimal": 58898
     },
     {
       "icon_id": "908504",
@@ -76,11 +20,53 @@
       "unicode_decimal": 59001
     },
     {
+      "icon_id": "5980008",
+      "name": "arrow-down",
+      "font_class": "arrow-down",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "5980009",
+      "name": "arrow-right",
+      "font_class": "arrow-right1",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "5980002",
+      "name": "avatar",
+      "font_class": "avatar",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "4503670",
+      "name": "edit",
+      "font_class": "edit",
+      "unicode": "e6c5",
+      "unicode_decimal": 59077
+    },
+    {
+      "icon_id": "631228",
+      "name": "email",
+      "font_class": "email",
+      "unicode": "e67b",
+      "unicode_decimal": 59003
+    },
+    {
       "icon_id": "983912",
       "name": "41说说",
       "font_class": "41shuoshuo",
       "unicode": "e658",
       "unicode_decimal": 58968
+    },
+    {
+      "icon_id": "706522",
+      "name": "weixin",
+      "font_class": "weixin",
+      "unicode": "e62e",
+      "unicode_decimal": 58926
     },
     {
       "icon_id": "986215",
@@ -90,25 +76,18 @@
       "unicode_decimal": 58967
     },
     {
-      "icon_id": "1557885",
-      "name": "keyboard",
-      "font_class": "keyboard-h",
-      "unicode": "e662",
-      "unicode_decimal": 58978
+      "icon_id": "584704",
+      "name": "qr",
+      "font_class": "qr",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
     },
     {
-      "icon_id": "2341429",
-      "name": "voice",
-      "font_class": "voice-h",
-      "unicode": "e6a6",
-      "unicode_decimal": 59046
-    },
-    {
-      "icon_id": "2570612",
-      "name": "emoji",
-      "font_class": "emoji",
-      "unicode": "e60a",
-      "unicode_decimal": 58890
+      "icon_id": "551966",
+      "name": "箭头",
+      "font_class": "arrow-right",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
     },
     {
       "icon_id": "2980095",
@@ -195,32 +174,60 @@
       "unicode_decimal": 58893
     },
     {
-      "icon_id": "4503670",
-      "name": "edit",
-      "font_class": "edit",
-      "unicode": "e6c5",
-      "unicode_decimal": 59077
+      "icon_id": "50270",
+      "name": "plus",
+      "font_class": "ios7plusoutline",
+      "unicode": "e691",
+      "unicode_decimal": 59025
     },
     {
-      "icon_id": "5980002",
-      "name": "avatar",
-      "font_class": "avatar",
-      "unicode": "e611",
-      "unicode_decimal": 58897
+      "icon_id": "722170",
+      "name": "plus",
+      "font_class": "plussign",
+      "unicode": "e75a",
+      "unicode_decimal": 59226
     },
     {
-      "icon_id": "5980008",
-      "name": "arrow-down",
-      "font_class": "arrow-down",
-      "unicode": "e60f",
-      "unicode_decimal": 58895
+      "icon_id": "762092",
+      "name": "emoji_light发生的发生",
+      "font_class": "emojilight",
+      "unicode": "e600",
+      "unicode_decimal": 58880
     },
     {
-      "icon_id": "5980009",
-      "name": "arrow-right",
-      "font_class": "arrow-right1",
-      "unicode": "e610",
-      "unicode_decimal": 58896
+      "icon_id": "2570612",
+      "name": "emoji",
+      "font_class": "emoji",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "464450",
+      "name": "keyboard",
+      "font_class": "keyboard",
+      "unicode": "e672",
+      "unicode_decimal": 58994
+    },
+    {
+      "icon_id": "1557885",
+      "name": "keyboard",
+      "font_class": "keyboard-h",
+      "unicode": "e662",
+      "unicode_decimal": 58978
+    },
+    {
+      "icon_id": "549465",
+      "name": "voice",
+      "font_class": "voice",
+      "unicode": "e87c",
+      "unicode_decimal": 59516
+    },
+    {
+      "icon_id": "2341429",
+      "name": "voice",
+      "font_class": "voice-h",
+      "unicode": "e6a6",
+      "unicode_decimal": 59046
     }
   ]
 }

@@ -9,6 +9,10 @@ interface Props {
 }
 
 class SView extends React.Component<Props, {}> {
+  static defaultProps = {
+    className: ''
+  }
+
   render() {
     const classNames = [];
     const { show = true, className = '', children } = this.props;
