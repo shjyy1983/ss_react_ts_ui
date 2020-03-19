@@ -1,5 +1,5 @@
 import React, { MouseEvent } from 'react';
-import { Transition } from 'react-transition-group';
+import { CSSTransition } from 'react-transition-group';
 import SView from '../SView';
 
 type noneFun = () => void ;
@@ -11,17 +11,21 @@ interface Props {
   onExit?: noneFun;
   onExiting?: noneFun;
   onExited?: noneFun;
-  addEndListener?: noneFun;
   in?: boolean;
-  mountOnEnter?: boolean;
   unmountOnExit?: boolean;
-  appear?: boolean;
   duration?: number;
-  transitionClass?: Record<string, any>;
+  animation?: string;
 }
 interface State {}
 
 class STransition extends React.Component<Props, State> {
+  static defaultProps = {
+    in: false,
+    duration: 300,
+    unmountOnExit: true,
+    animation: 'fade'
+  }
+
   constructor(props: Props) {
     super(props);
   }
@@ -34,38 +38,32 @@ class STransition extends React.Component<Props, State> {
       onExit,
       onExiting,
       onExited,
-      addEndListener,
       unmountOnExit,
-      appear,
       duration,
-      mountOnEnter,
-      transitionClass
+      animation
     } = this.props;
     return (
-      <Transition
+      <CSSTransition
+        in={inProp}
         onEnter={() => onEnter && onEnter()}
         onEntering={() => onEntering && onEntering()}
         onEntered={() => onEntered && onEntered()}
         onExit={() => onExit && onExit()}
         onExiting={() => onExiting && onExiting()}
         onExited={() => onExited && onExited()}
-        addEndListener={() => addEndListener && addEndListener()}
-        in={inProp}
-        mountOnEnter={mountOnEnter}
         unmountOnExit={unmountOnExit}
-        appear={appear}
-        timeout={duration}>
+        timeout={duration}
+        classNames={animation}>
         {
           state => {
-            console.log(state, transitionClass[state]);
             return (
-              <SView className={transitionClass[state]}>
+              <SView>
                 {this.props.children}
               </SView>
             );
           }
         }
-      </Transition>
+      </CSSTransition>
     );
   }
 }

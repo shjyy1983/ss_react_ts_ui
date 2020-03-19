@@ -1,5 +1,6 @@
 import React, { FocusEvent, TouchEvent, MouseEvent } from 'react';
 import SIcon from '@components/SIcon';
+import STransition from '@components/Base/STransition';
 import './style.less';
 
 interface Props {
@@ -79,9 +80,11 @@ class SInput extends React.PureComponent<Props, State> {
       fontSize: fontSize + 'px'
     };
 
-    const clearIconComp = this.state.value.length > 0 ?
-      <SIcon className={'s-input-clear'} icon={'clear'} fontSize={20} color={'#eee'} onClick={this.handlerClear}></SIcon> : '';
-
+    const clearIconComp = (
+      <STransition animation={'alert'} unmountOnExit={true} duration={300} in={this.state.value.length > 0}>
+        <SIcon className={'s-input-clear'} icon={'clear'} fontSize={20} color={'#eee'} onClick={this.handlerClear}></SIcon>
+      </STransition>
+    );
     return (
       <div className="s-input" style={dynamicStyle}>
         <input

@@ -17,7 +17,7 @@ interface Props {
 
 class SIcon extends React.PureComponent<Props, {}> {
   static defaultProps = {
-    icon: 'icon-email',
+    icon: 'email',
     color: '#333',
     fontSize: 14,
     throttleDelay: 300,
