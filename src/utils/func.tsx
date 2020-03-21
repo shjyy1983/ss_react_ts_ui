@@ -57,7 +57,10 @@ function throttle(fn: SAnyFunction, delay: number): SAnyFunction {
   return reFn;
 }
 
-function strRemoveUnit(str: string, units: string[] = ['px', '%', 'rem', 'Px', 'PX']): number {
+function strRemoveUnit(str: string | number, units: string[] = ['px', '%', 'rem', 'Px', 'PX']): number {
+  if (typeof str === 'number') {
+    return str;
+  }
   const reg = new RegExp(`${units.join('|')}`, 'ig');
   return parseFloat(str.replace(reg, ''));
 }

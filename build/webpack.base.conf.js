@@ -2,7 +2,7 @@
  * @Author: SHEN
  * @Date: 2020-01-01 15:14:31
  * @Last Modified by: SHEN
- * @Last Modified time: 2020-03-18 23:33:00
+ * @Last Modified time: 2020-03-21 10:25:14
  */
 'use strict'
 const path = require('path')
@@ -29,6 +29,10 @@ module.exports = {
       '@utils':path.resolve(__dirname,'../src/utils'),
       'assets':path.resolve(__dirname,'../src/assets')
     }
+  },
+  performance: {
+    maxEntrypointSize: 500 * 1024, // 入口文件超过 500KB 进行警告提示
+    maxAssetSize: 500 * 1024 // 资源文件超过 500KB 进行警告提示
   },
   module: {
     rules: [

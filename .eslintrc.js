@@ -61,6 +61,7 @@ module.exports = {
     'handle-callback-err': 'warn',
     // 不建议使用逗号，如果有则 warn
     'semi': 'warn',
+    'prefer-const': 'warn',
     // 使用过期函数：警告
     // 'node/no-deprecated-api': 'warn',
     '@typescript-eslint/no-empty-function': 'warn',
@@ -68,6 +69,7 @@ module.exports = {
     '@typescript-eslint/interface-name-prefix': 'warn',
     '@typescript-eslint/no-var-requires': 'warn',
     '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/no-explicit-any': 'off'
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-unused-vars': 'warn'
   }
 }

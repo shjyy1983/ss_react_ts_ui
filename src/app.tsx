@@ -11,6 +11,7 @@ import TestTransition from '@views/testTransition';
 import TestSelect from '@views/testSelect';
 import TestInput from '@views/testInput';
 import TestIcon from '@views/testIcon';
+import TestActionsheet from '@views/testActionsheet';
 import { PageError } from '@views/error';
 
 import TestRaf from '@demos/testRaf';
@@ -44,6 +45,7 @@ const routes = (
       <Route exact path="/testSelect" component={TestSelect}></Route>
       <Route exact path="/testInput" component={TestInput}></Route>
       <Route exact path="/testIcon" component={TestIcon}></Route>
+      <Route exact path="/testActionsheet" component={TestActionsheet}></Route>
 
       <Route exact path="/testRaf" component={TestRaf}></Route>
       <Route exact path="/testReactTransitionGroup" component={TestReactTransitionGroup}></Route>

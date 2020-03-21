@@ -10,7 +10,8 @@ interface Props {
   position: Position;
   onHide?: NoneFunc;
   width?: string;
-  height?: string;
+  height?: string | number;
+  backgroundColor?: string;
 }
 
 interface State {}
@@ -18,7 +19,8 @@ interface State {}
 class SModal extends React.PureComponent<Props, State> {
   static defaultProps = {
     width: '100%',
-    height: '100%',
+    height: 'auto',
+    backgroundColor: '#fff'
   }
   constructor(props: Props) {
     super(props);
@@ -26,11 +28,12 @@ class SModal extends React.PureComponent<Props, State> {
     this.handleContentClick = this.handleContentClick.bind(this);
   }
   render() {
-    const { visible, children, position, width, height } = this.props;
+    const { visible, children, position, width, height, backgroundColor } = this.props;
     const clsName = `present-${position}`;
     let dynamicStyle = {
       width,
-      height
+      height,
+      backgroundColor
     };
     switch (position) {
     case Position.Top:

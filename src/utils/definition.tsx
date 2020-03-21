@@ -10,6 +10,16 @@ export const enum Position {
 }
 
 /**
+ * 常量 - 按钮类型
+ */
+export const enum ButtonType {
+  Text = 0,
+  Normal = 1,
+  Ok = 2,
+  Cancel = 3
+}
+
+/**
  * 别名
  */
 export type NumberOrString = number | string
