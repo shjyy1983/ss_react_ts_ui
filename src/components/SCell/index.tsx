@@ -11,11 +11,11 @@ interface Props {
   accessory?: boolean;
   onClick?: (event: MouseEvent<HTMLDivElement>) => void;
   rightButtons?: Array<string>;
+  height?: number;
 }
 
 interface State {
   bgColor?: string;
-  // startPos: Record<string, number>;
 }
 
 const initialState =  {
@@ -41,7 +41,8 @@ class SCell extends React.PureComponent<Props, State> {
     bgColor: '#ff',
     hightlightBgColor: '#ff',
     accessory: false,
-    rightButtons: [] as Array<string>
+    rightButtons: [] as Array<string>,
+    height: 44
   }
 
   constructor(props: Props) {
@@ -71,7 +72,9 @@ class SCell extends React.PureComponent<Props, State> {
     this.rightRef.current.style.webkitTransform = this.rightDefaultTransform;
     this.rightRef.current.style.webkitTransition = 'transform 0ms ease-in-out';
 
-    document.addEventListener('touchstart', this.hide, false);
+    document.addEventListener('touchstart', this.hide,  false);
+
+    console.log('this.rightWidth', this.rightWidth);
   }
 
   componentWillUnmount() {
@@ -134,9 +137,10 @@ class SCell extends React.PureComponent<Props, State> {
       this.direction = x > y ? 'horizonal' : 'vertical';
     }
     if (this.direction === 'horizonal') {
-      // e.preventDefault();
-      // e.stopPropagation();
+      e.preventDefault();
+      e.stopPropagation(); // android 必须
       const swiping = !(x < 5 || (x >= 5 && y >= x * 1.73));
+      console.log('offsetLeft', x, swiping);
       if (!swiping) {
         return;
       }
@@ -205,10 +209,11 @@ class SCell extends React.PureComponent<Props, State> {
   }
 
   render() {
+    const { title, subTitle, accessory, rightButtons, height} = this.props;
     const dynamicStyle = {
-      backgroundColor: this.state.bgColor
+      backgroundColor: this.state.bgColor,
+      height: height + 'px'
     };
-    const { title, subTitle, accessory, rightButtons} = this.props;
     const children = [];
     const titleCmp = (
       <div className="s-cell__content-title" key="title">
