@@ -2,7 +2,7 @@
  * @Author: S
  * @Date: 2018-12-14 17:41:21
  * @Last Modified by: SHEN
- * @Last Modified time: 2020-01-14 11:17:53
+ * @Last Modified time: 2020-03-22 17:03:39
  */
 
 @import "./variable.less";
@@ -22,6 +22,10 @@
   flex-direction: @direction;
   justify-content: @justifyContent;
   align-items: @alignItems;
+}
+.flex-inline(@direction: inherit, @justifyContent: inherit, @alignItems: inherit) {
+  .flex(@direction, @justifyContent, @alignItems);
+  display: inline-flex;
 }
 .flexGrow(@val: 1) {
   flex-grow: @val;
