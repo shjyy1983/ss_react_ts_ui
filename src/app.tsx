@@ -1,4 +1,4 @@
-import 'react-app-polyfill/ie9';
+// import 'react-app-polyfill/ie9';
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { Route, BrowserRouter, HashRouter, Switch, Redirect } from "react-router-dom";

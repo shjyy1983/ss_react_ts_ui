@@ -9,7 +9,7 @@
     "lint": "eslint --ext .js,.tsx ./src/components -f html -o ./reports/report.html || open ./reports/report.html",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.dev.conf.js",
     "build_demo": "cross-env NODE_ENV=production webpack --progress --hide-modules --config build/webpack.demo.conf.js",
-    "build": "cross-env NODE_ENV=production node build/build.js --gzip=true",
+    "build": "cross-env NODE_ENV=production node build/build.js",
     "publish_npm": "./scripts/publish"
   },
   "pre-commit": [
@@ -32,6 +32,8 @@
   ],
   "devDependencies": {
     "@babel/core": "^7.7.7",
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@babel/polyfill": "^7.8.7",
     "@babel/preset-env": "^7.7.7",
     "@babel/preset-react": "^7.7.4",
     "@babel/preset-typescript": "^7.8.3",
@@ -96,7 +98,7 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
-    "core-js": "^3.6.4",
+    "core-js": "3.6.4",
     "raf": "^3.4.1",
     "react": "^16.12.0",
     "react-app-polyfill": "^1.0.5",

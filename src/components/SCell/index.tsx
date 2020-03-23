@@ -73,8 +73,6 @@ class SCell extends React.PureComponent<Props, State> {
     this.rightRef.current.style.webkitTransition = 'transform 0ms ease-in-out';
 
     document.addEventListener('touchstart', this.hide,  false);
-
-    console.log('this.rightWidth', this.rightWidth);
   }
 
   componentWillUnmount() {
@@ -140,7 +138,6 @@ class SCell extends React.PureComponent<Props, State> {
       e.preventDefault();
       e.stopPropagation(); // android 必须
       const swiping = !(x < 5 || (x >= 5 && y >= x * 1.73));
-      console.log('offsetLeft', x, swiping);
       if (!swiping) {
         return;
       }
@@ -197,15 +194,6 @@ class SCell extends React.PureComponent<Props, State> {
 
   private translate3d(offset: number) {
     return `translate3d(${Math.ceil(offset)}px, 0, 0)`;
-  }
-
-  private handleClickOutside() {
-    console.log('handleClickOutside');
-    this.swipeMove(0);
-  }
-
-  private toggle() {
-    console.log('toggle');
   }
 
   render() {

@@ -1,5 +1,6 @@
 import React, { MouseEvent, TouchEvent } from 'react';
 import { increaseBrightness, throttle } from '@utils/func';
+import { trim } from '@utils/dom';
 import SIcon from '../SIcon';
 import './style.less';
 
@@ -29,7 +30,7 @@ interface Props {
  }
 
 class SButton extends React.Component<Props, State> {
-  // state 设置为只读类型，防止直接更新 state 
+  // state 设置为只读类型，防止直接更新 state
   public readonly state: Readonly<State> = {
     bgColor: this.props.bgColor
   }
@@ -71,7 +72,7 @@ class SButton extends React.Component<Props, State> {
         onTouchStart={this.handleTouchStart}
         onTouchEnd={this.handleTouchEnd}>
         { icon && <SIcon icon={icon} color={ dynamicStyle.color } fontSize={ dynamicStyle.fontSize }></SIcon> }
-        <span>{this.props.title}</span>
+        <span>{trim(this.props.title)}</span>
       </div>
     );
   }

@@ -15,6 +15,7 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "isolatedModules": false, // 如果设置为 true，那么会导致 npm run test 报错
+    "allowJs": true, // 如果要使用现有的js文件的话，设置为 true
     "baseUrl": "src",
     "paths": {
       "@/*": ["*"],

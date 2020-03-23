@@ -2,7 +2,8 @@
 npm run build --report=true --gzip=true
 npm run build --gzip=true
 
-
+发布
+./scripts/run
 
 [参考]
 【译】使用 React，TypeScript 和 Webpack 开始一个项目
