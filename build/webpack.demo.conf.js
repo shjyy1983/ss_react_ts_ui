@@ -2,7 +2,7 @@
  * @Author: SHEN
  * @Date: 2020-01-03 09:31:33
  * @Last Modified by: SHEN
- * @Last Modified time: 2020-01-22 15:07:42
+ * @Last Modified time: 2020-03-23 15:28:12
  */
 'use strict'
 const utils = require('./utils')
@@ -17,7 +17,8 @@ const HtmlWebPackPlugin = require("html-webpack-plugin")
 const demoWebpackConfig = merge(baseWebpackConfig, {
   mode: 'production',
   entry: {
-    app: ["./src/app.tsx"]
+    // app: ["./src/app.tsx"]
+    app: ["./src/demo.tsx"]
   },
   devtool: false, // config.dev.devtool, // 这个会巨量增加包大小，设置为 false 去掉调试信息
   output: {
