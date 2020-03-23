@@ -20,6 +20,9 @@ declare namespace SSReactUI {
     height?: string;
     padding?: string;
     fontSize?: number;
+    borderWidth?: number;
+    borderColor?: string;
+    clearable?: boolean;
   }
   export class SInput extends SSReactLibs.PureComponent<SInputProps, {}> {
 
