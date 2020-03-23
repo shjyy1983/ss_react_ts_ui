@@ -1,8 +1,8 @@
 /*
  * @Author: SHEN
  * @Date: 2020-01-03 09:52:36
- * @Last Modified by:   SHEN
- * @Last Modified time: 2020-01-03 09:52:36
+ * @Last Modified by: SHEN
+ * @Last Modified time: 2020-03-23 16:37:19
  */
 'use strict'
 require('./check-versions')()
@@ -22,7 +22,7 @@ spinner.start() // 开启loading动画
 
 // 首先将整个dist文件夹以及里面的内容删除，以免遗留旧的没用的文件
 // 删除完成后才开始webpack构建打包
-rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
+rm(path.join(config.build.assetsRoot, '.'), err => {
   if (err) throw err
   // 执行webpack构建打包，完成之后在终端输出构建完成的相关信息或者输出报错信息并退出程序
   webpack(webpackConfig, (err, stats) => {

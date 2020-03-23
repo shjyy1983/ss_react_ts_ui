@@ -2,12 +2,13 @@
  * @Author: SHEN
  * @Date: 2020-01-01 15:14:31
  * @Last Modified by: SHEN
- * @Last Modified time: 2020-03-23 10:05:14
+ * @Last Modified time: 2020-03-23 16:35:35
  */
 'use strict'
 const path = require('path')
 const utils = require('./utils')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   // 基础目录，绝对路径，用于从配置中解析入口起点，以下配置为项目根目录
@@ -22,12 +23,12 @@ module.exports = {
     // Add '.ts' and '.tsx' as resolvable extensions.
     extensions: [".ts", ".tsx", ".js", ".jsx", ".json"],
     alias: {
-      '@': path.resolve(__dirname, '../src'),
-      '@components':path.resolve(__dirname,'../src/components'),
-      '@views':path.resolve(__dirname,'../src/views'),
-      '@demos':path.resolve(__dirname,'../src/demos'),
-      '@utils':path.resolve(__dirname,'../src/utils'),
-      'assets':path.resolve(__dirname,'../src/assets')
+      '@': utils.resolve('src'),
+      '@components':utils.resolve('src/components'),
+      '@views':utils.resolve('src/views'),
+      '@demos':utils.resolve('src/demos'),
+      '@utils':utils.resolve('src/utils'),
+      'assets':utils.resolve('src/assets')
     }
   },
   performance: {
@@ -50,7 +51,11 @@ module.exports = {
         include: path.resolve(__dirname, "../src/")
       },
       {
-        test: /\.css|\.less$/,
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
+      },
+      {
+        test: /\.less$/,
         use: [
           'style-loader', 'css-loader', 'postcss-loader', 'less-loader'
         ]
@@ -77,7 +82,11 @@ module.exports = {
     ]
   },
   plugins: [
-    new ForkTsCheckerWebpackPlugin()
+    new ForkTsCheckerWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: 'ss_react_ts_ui.css',
+      chunkFilename: 'ss_react_ts_ui.css'
+    })
   ],
   node: {
     // prevent webpack from injecting useless setImmediate polyfill because Vue

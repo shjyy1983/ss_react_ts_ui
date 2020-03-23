@@ -2,7 +2,7 @@
  * @Author: SHEN
  * @Date: 2020-01-03 09:49:41
  * @Last Modified by: SHEN
- * @Last Modified time: 2020-03-21 10:23:54
+ * @Last Modified time: 2020-03-23 16:35:03
  */
 
 'use strict'
@@ -28,6 +28,9 @@ const webpackConfig = merge(baseWebpackConfig, {
     libraryTarget: 'umd', // libraryTarget会生成不同umd的代码,可以只是commonjs标准的，也可以是指amd标准的，也可以只是通过script标签引入的
     // umdNamedDefine: true, // 会对 UMD 的构建过程中的 AMD 模块进行命名。否则就使用匿名的 define
 		libraryExport: 'default'
+  },
+  module: {
+    rules: utils.styleLoaders({ sourceMap: config.dev.productionSourceMap, usePostCSS: true, extract: true })
   },
   plugins: [
     new webpack.DefinePlugin({

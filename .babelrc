@@ -7,7 +7,7 @@
           "browsers": ["last 2 versions", "Explorer >= 10", "Android >= 4.0", "ios >= 6"]
         },
         "useBuiltIns": "usage",
-        "debug": true,
+        "debug": false,
         "corejs": 3 // 需要安装 yarn add core-js@3.6.4 -D
       }
     ],

@@ -15,7 +15,7 @@ class TestButton extends React.PureComponent<Props, State> {
     return (
       <div className="page page-test-button">
         <div className="page-content">
-          <SButton title={'hello2'} color={'#fff'} bgColor={'#54a7fd'} throttleDelay={2000} fontSize={'14px'} icon={"icon-email"} onClick={this.handleClick}></SButton>
+          <SButton title={'hello2'} color={'#fff'} bgColor={'#54a7fd'} throttleDelay={2000} fontSize={'14px'} icon={"email"} onClick={this.handleClick}></SButton>
         </div>
       </div>
     );

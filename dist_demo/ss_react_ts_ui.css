@@ -1,0 +1,439 @@
+/*
+ * @Author: S
+ * @Date: 2018-12-14 17:41:21
+ * @Last Modified by: SHEN
+ * @Last Modified time: 2020-03-22 17:03:39
+ */
+.relative {
+  position: relative;
+}
+.s-button {
+  display: -webkit-inline-box;
+  display: inline-flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  min-width: 40px;
+  height: 30px;
+  padding: 0 8px;
+  margin: 0 5px 5px 0;
+  color: #298dff;
+  border-radius: 3px;
+  background-color: #fff;
+  cursor: pointer;
+}
+.s-button .iconfont {
+  margin-right: 5px;
+}
+.s-input {
+  position: relative;
+  overflow: hidden;
+  border-radius: 3px;
+}
+.s-input > input {
+  width: 100%;
+  height: 100%;
+}
+.s-input-clear {
+  position: absolute;
+  top: 0;
+  right: 6px;
+  bottom: 0;
+}
+.s-mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+.s-modal {
+  overflow: hidden;
+}
+.s-modal .s-modal-content-wrapper {
+  position: fixed;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  bottom: 0;
+  width: 100%;
+  height: 300px;
+  background-color: transparent;
+  z-index: 1001;
+}
+.s-modal .s-modal-content {
+  position: relative;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+}
+/*
+ * @Author: S
+ * @Date: 2018-12-14 17:41:21
+ * @Last Modified by: SHEN
+ * @Last Modified time: 2020-03-22 17:03:39
+ */
+.relative {
+  position: relative;
+}
+.s-message-box .alert {
+  position: absolute;
+  width: 80%;
+  height: 200px;
+  background-color: gray;
+  z-index: 1001;
+}
+.s-message-box .msg-box-content-wrapper {
+  position: absolute;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+.s-message-box .msg-box-content {
+  width: 300px;
+  height: 200px;
+  background-color: #fff;
+}
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+body {
+  background-color: #fff;
+  line-height: 1.4;
+  font-size: 14px;
+  font-family: PingFang-SC-Medium, Helvetica Neue, Helvetica, Arial, sans-serif;
+  color: #333;
+}
+.none {
+  display: none;
+}
+.hidden {
+  visibility: hidden;
+}
+.visible {
+  visibility: visible;
+}
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+form,
+button,
+input,
+select,
+ul,
+ol,
+dl,
+dd {
+  padding: 0;
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+i,
+em,
+strong {
+  font-weight: normal;
+}
+i,
+em,
+b {
+  font-style: normal;
+  font-weight: normal;
+}
+a {
+  color: #54a7fd;
+  text-decoration: none;
+}
+a:active {
+  outline: 0;
+  text-decoration: none;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+button,
+input {
+  outline: none;
+  border: none;
+}
+textarea {
+  overflow: auto;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+ul,
+li {
+  list-style: none;
+}
+img {
+  border: none;
+}
+/*
+ * @Author: S
+ * @Date: 2018-12-14 17:41:21
+ * @Last Modified by: SHEN
+ * @Last Modified time: 2020-03-22 17:03:39
+ */
+.relative {
+  position: relative;
+}
+.page {
+  background-color: #fff;
+}
+.page .page-content {
+  position: absolute;
+  overflow: auto;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.page .title {
+  font-size: 16px;
+  color: #333;
+}
+.absolute {
+  position: absolute;
+}
+.margin10 {
+  margin: 10px;
+}
+.padding10 {
+  padding: 10px;
+}
+.some {
+  width: 100px;
+  height: 100px;
+  background-color: gray;
+}
+.box {
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  margin: 5px;
+  background-color: #eee;
+}
+.small {
+  width: 60px;
+  height: 60px;
+}
+.gray {
+  color: gray;
+}
+.bg-gray {
+  background-color: gray;
+}
+/* 颜色 */
+.black {
+  color: #333333;
+}
+.blue {
+  color: #298dff;
+}
+.red {
+  color: #f5222d;
+}
+.gray {
+  color: #9e9e9e;
+}
+.alert-enter {
+  opacity: 0;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+}
+.alert-enter-active {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: opacity 20000ms, -webkit-transform 20000ms;
+  transition: opacity 20000ms, -webkit-transform 20000ms;
+  transition: opacity 20000ms, transform 20000ms;
+  transition: opacity 20000ms, transform 20000ms, -webkit-transform 20000ms;
+}
+.alert-exit {
+  opacity: 1;
+}
+.alert-exit-active {
+  opacity: 0;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  -webkit-transition: opacity 20000ms, -webkit-transform 20000ms;
+  transition: opacity 20000ms, -webkit-transform 20000ms;
+  transition: opacity 20000ms, transform 20000ms;
+  transition: opacity 20000ms, transform 20000ms, -webkit-transform 20000ms;
+}
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  -webkit-transition: opacity 20000ms;
+  transition: opacity 20000ms;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  -webkit-transition: opacity 20000ms;
+  transition: opacity 20000ms;
+}
+.present-bottom-enter {
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+}
+.present-bottom-enter-active {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: -webkit-transform 20000ms ease-in-out;
+  transition: -webkit-transform 20000ms ease-in-out;
+  transition: transform 20000ms ease-in-out;
+  transition: transform 20000ms ease-in-out, -webkit-transform 20000ms ease-in-out;
+}
+.present-bottom-exit {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.present-bottom-exit-active {
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkit-transition: -webkit-transform 20000ms ease-in-out;
+  transition: -webkit-transform 20000ms ease-in-out;
+  transition: transform 20000ms ease-in-out;
+  transition: transform 20000ms ease-in-out, -webkit-transform 20000ms ease-in-out;
+}
+.present-top-enter {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+.present-top-enter-active {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: -webkit-transform 20000ms ease-in-out;
+  transition: -webkit-transform 20000ms ease-in-out;
+  transition: transform 20000ms ease-in-out;
+  transition: transform 20000ms ease-in-out, -webkit-transform 20000ms ease-in-out;
+}
+.present-top-exit {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.present-top-exit-active {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-transition: -webkit-transform 20000ms ease-in-out;
+  transition: -webkit-transform 20000ms ease-in-out;
+  transition: transform 20000ms ease-in-out;
+  transition: transform 20000ms ease-in-out, -webkit-transform 20000ms ease-in-out;
+}
+.present-left-enter {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+.present-left-enter-active {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: -webkit-transform 20000ms ease-in-out;
+  transition: -webkit-transform 20000ms ease-in-out;
+  transition: transform 20000ms ease-in-out;
+  transition: transform 20000ms ease-in-out, -webkit-transform 20000ms ease-in-out;
+}
+.present-left-exit {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+.present-left-exit-active {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: -webkit-transform 20000ms ease-in-out;
+  transition: -webkit-transform 20000ms ease-in-out;
+  transition: transform 20000ms ease-in-out;
+  transition: transform 20000ms ease-in-out, -webkit-transform 20000ms ease-in-out;
+}
+.present-right-enter {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+.present-right-enter-active {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: -webkit-transform 20000ms ease-in-out;
+  transition: -webkit-transform 20000ms ease-in-out;
+  transition: transform 20000ms ease-in-out;
+  transition: transform 20000ms ease-in-out, -webkit-transform 20000ms ease-in-out;
+}
+.present-right-exit {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+.present-right-exit-active {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: -webkit-transform 20000ms ease-in-out;
+  transition: -webkit-transform 20000ms ease-in-out;
+  transition: transform 20000ms ease-in-out;
+  transition: transform 20000ms ease-in-out, -webkit-transform 20000ms ease-in-out;
+}
+.present-center-enter {
+  opacity: 0;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+}
+.present-center-enter-active {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: opacity 20000ms, -webkit-transform 20000ms;
+  transition: opacity 20000ms, -webkit-transform 20000ms;
+  transition: opacity 20000ms, transform 20000ms;
+  transition: opacity 20000ms, transform 20000ms, -webkit-transform 20000ms;
+}
+.present-center-exit {
+  opacity: 1;
+}
+.present-center-exit-active {
+  opacity: 0;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  -webkit-transition: opacity 20000ms, -webkit-transform 20000ms;
+  transition: opacity 20000ms, -webkit-transform 20000ms;
+  transition: opacity 20000ms, transform 20000ms;
+  transition: opacity 20000ms, transform 20000ms, -webkit-transform 20000ms;
+}

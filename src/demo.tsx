@@ -5,6 +5,7 @@ import * as ReactDOM from "react-dom";
 // let YanProgress = require("../dist/YanProgress.min.js")
 // console.log(YanProgress)
 const { SButton, SInput } = require('../dist/ss_react_ts_ui.min.js');
+import "../dist/ss_react_ts_ui.css";
 // import { SButton, SInput } from '../dist/ss_react_ts_ui.min.js';
 
 ReactDOM.render(

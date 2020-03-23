@@ -7,6 +7,7 @@ import SButton from '@components/SButton';
 import SIcon from '@components/SIcon';
 import SInput from '@components/SInput';
 import SMessageBox from '@components/SMessageBox';
+import '@/assets/less/app.less';
 
 export default {
   STransition,

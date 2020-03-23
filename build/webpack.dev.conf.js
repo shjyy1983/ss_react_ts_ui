@@ -2,7 +2,7 @@
  * @Author: SHEN
  * @Date: 2020-01-03 09:31:33
  * @Last Modified by: SHEN
- * @Last Modified time: 2020-01-13 19:11:07
+ * @Last Modified time: 2020-03-23 16:31:23
  */
 'use strict'
 const utils = require('./utils')
@@ -19,13 +19,16 @@ const HtmlWebPackPlugin = require("html-webpack-plugin")
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT) // 读取系统环境变量的port
 
-
 const devWebpackConfig = merge(baseWebpackConfig, {
   mode: 'development',
   entry: {
     app: ["./src/app.tsx"]
   },
   devtool: config.dev.devtool,
+  // module: {
+  //   // 对一些独立的css文件以及它的预处理文件做一个编译
+  //   rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap, usePostCSS: true })
+  // },
   devServer: {
     host: HOST || config.dev.host,
     port: PORT || config.dev.port,

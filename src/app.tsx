@@ -30,7 +30,6 @@ import TestFragment from '@demos/testFragment';
 import TestForwardRef from '@demos/testForwardRef';
 import TestReactClickOutside from '@demos/testReactClickOutside';
 import '@/assets/less/app.less';
-
 const routes = (
   <HashRouter basename="/">
     <Switch>
