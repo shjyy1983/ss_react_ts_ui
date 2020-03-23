@@ -11,6 +11,7 @@ declare namespace SSReactLibs {
 }
 
 declare namespace SSReactUI {
+  type noneFun = () => void ;
   // Base STransition
   interface STransitionProps extends SSReactLibs.ComponentProps<{}> {
     onEnter?: noneFun;
