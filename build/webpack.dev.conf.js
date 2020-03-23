@@ -2,7 +2,7 @@
  * @Author: SHEN
  * @Date: 2020-01-03 09:31:33
  * @Last Modified by: SHEN
- * @Last Modified time: 2020-03-23 16:31:23
+ * @Last Modified time: 2020-03-23 17:10:26
  */
 'use strict'
 const utils = require('./utils')
@@ -25,10 +25,10 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     app: ["./src/app.tsx"]
   },
   devtool: config.dev.devtool,
-  // module: {
-  //   // 对一些独立的css文件以及它的预处理文件做一个编译
-  //   rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap, usePostCSS: true })
-  // },
+  module: {
+    // 对一些独立的css文件以及它的预处理文件做一个编译
+    rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap, usePostCSS: true })
+  },
   devServer: {
     host: HOST || config.dev.host,
     port: PORT || config.dev.port,

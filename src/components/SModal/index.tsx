@@ -1,6 +1,5 @@
 import React, { MouseEvent } from 'react';
-import { CSSTransition } from 'react-transition-group';
-import { Position, NumberOrString, NoneFunc } from '@utils/definition';
+import { Position, NoneFunc } from '@utils/definition';
 import { strRemoveUnit } from '@utils/func';
 import SMask from '@components/SMask';
 import STransition from '@components/Base/STransition';
@@ -15,9 +14,7 @@ interface Props {
   backgroundColor?: string;
 }
 
-interface State {}
-
-class SModal extends React.PureComponent<Props, State> {
+class SModal extends React.PureComponent<Props, {}> {
   static defaultProps = {
     width: '100%',
     height: 'auto',
@@ -101,7 +98,7 @@ class SModal extends React.PureComponent<Props, State> {
     return (
       <div className="s-modal" onClick={this.handleHide}>
         {maskComp}
-        <STransition in={visible} unmountOnExit={true} animation={animation} duration={2000}>
+        <STransition in={visible} unmountOnExit={true} animation={animation} duration={300}>
           <div className="s-modal-content-wrapper" style={dynamicStyle}>
             <div className="s-modal-content" onClick={e => this.handleContentClick(e)}>
               {children}
