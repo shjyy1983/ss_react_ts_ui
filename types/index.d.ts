@@ -88,6 +88,8 @@ declare namespace SSReactUI {
 }
 
 declare module "ss_react_ts_ui" {
+  export import STransition = SSReactUI.STransition
+  export import SView = SSReactUI.SView
   export import SButton = SSReactUI.SButton
   export import SInput = SSReactUI.SInput
   export import SIcon = SSReactUI.SIcon
