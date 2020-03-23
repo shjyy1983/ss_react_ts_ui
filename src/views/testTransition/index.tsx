@@ -23,7 +23,7 @@ class Page extends React.Component<{}, State> {
     return (
       <div className="page-test-transition">
         <h1 onClick={() => this.handleClick1()}>fade效果</h1>
-        <STransition in={visible} unmountOnExit={true} animation={animation} duration={20000}>
+        <STransition in={visible} unmountOnExit={true} animation={animation} duration={3000}>
           <div className="somesomebox">
             <div>Hello world </div>
             <SIcon icon={"voice"} fontSize={30} color={'blue'}></SIcon>

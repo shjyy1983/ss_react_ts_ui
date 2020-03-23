@@ -3,6 +3,7 @@ import { CSSTransition } from 'react-transition-group';
 import { Position, NumberOrString, NoneFunc } from '@utils/definition';
 import { strRemoveUnit } from '@utils/func';
 import SMask from '@components/SMask';
+import STransition from '@components/Base/STransition';
 import './style.less';
 
 interface Props {
@@ -78,21 +79,35 @@ class SModal extends React.PureComponent<Props, State> {
     const maskComp = (
       <SMask visible={visible}></SMask>
     );
+    // return (
+    //   <div className="s-modal" onClick={this.handleHide}>
+    //     {maskComp}
+    //     <CSSTransition
+    //       in={visible}
+    //       timeout={300}
+    //       classNames={clsName}
+    //       unmountOnExit
+    //     >
+    //       <div className="s-modal-content-wrapper" style={dynamicStyle}>
+    //         <div className="s-modal-content" onClick={e => this.handleContentClick(e)}>
+    //           {children}
+    //         </div>
+    //       </div>
+    //     </CSSTransition>
+    //   </div>
+    // );
+
+    const animation = clsName;
     return (
       <div className="s-modal" onClick={this.handleHide}>
         {maskComp}
-        <CSSTransition
-          in={visible}
-          timeout={300}
-          classNames={clsName}
-          unmountOnExit
-        >
+        <STransition in={visible} unmountOnExit={true} animation={animation} duration={2000}>
           <div className="s-modal-content-wrapper" style={dynamicStyle}>
             <div className="s-modal-content" onClick={e => this.handleContentClick(e)}>
               {children}
             </div>
           </div>
-        </CSSTransition>
+        </STransition>
       </div>
     );
   }
