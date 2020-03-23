@@ -2,7 +2,7 @@
  * @Author: SHEN
  * @Date: 2020-01-03 09:49:41
  * @Last Modified by: SHEN
- * @Last Modified time: 2020-03-23 16:35:03
+ * @Last Modified time: 2020-03-23 17:18:47
  */
 
 'use strict'
@@ -12,6 +12,8 @@ const path = require('path')
 const config = require('./config') // 基本配置的参数
 const baseWebpackConfig = require('./webpack.base.conf') // webpack基本配置文件（开发和生产环境公用部分）
 const merge = require('webpack-merge') // webpack-merge是一个可以合并数组和对象的插件
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin') // uglifyJs 混淆js插件
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin') // optimize-css-assets-webpack-plugin，用于优化和最小化css资源
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const webpackConfig = merge(baseWebpackConfig, {
@@ -31,6 +33,16 @@ const webpackConfig = merge(baseWebpackConfig, {
   },
   module: {
     rules: utils.styleLoaders({ sourceMap: config.dev.productionSourceMap, usePostCSS: true, extract: true })
+  },
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true
+      }),
+      new OptimizeCSSAssetsPlugin({})
+    ]
   },
   plugins: [
     new webpack.DefinePlugin({

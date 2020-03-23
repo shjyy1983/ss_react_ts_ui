@@ -2,7 +2,7 @@
  * @Author: SHEN
  * @Date: 2020-01-01 15:14:31
  * @Last Modified by: SHEN
- * @Last Modified time: 2020-03-23 17:10:05
+ * @Last Modified time: 2020-03-23 17:12:29
  */
 'use strict'
 const path = require('path')
@@ -50,16 +50,6 @@ module.exports = {
         loader: 'babel-loader',
         include: path.resolve(__dirname, "../src/")
       },
-      // {
-      //   test: /\.css$/,
-      //   use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
-      // },
-      // {
-      //   test: /\.less$/,
-      //   use: [
-      //     'style-loader', 'css-loader', 'postcss-loader', 'less-loader'
-      //   ]
-      // },
       // 对图片资源文件使用url-loader
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
