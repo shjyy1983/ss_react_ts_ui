@@ -11,6 +11,34 @@ declare namespace SSReactLibs {
 }
 
 declare namespace SSReactUI {
+  // Base STransition
+  interface STransitionProps extends SSReactLibs.ComponentProps<{}> {
+    onEnter?: noneFun;
+    onEntering?: noneFun;
+    onEntered?: noneFun;
+    onExit?: noneFun;
+    onExiting?: noneFun;
+    onExited?: noneFun;
+    in?: boolean;
+    unmountOnExit?: boolean;
+    duration?: number;
+    animation?: string;
+  }
+  export class STransition extends SSReactLibs.Component<STransitionProps, {}> {
+
+  }
+
+  // Base SView
+  interface SViewProps extends SSReactLibs.ComponentProps<{}> {
+    show?: boolean;
+    className?: string;
+    children?: any;
+    style?: any;
+  }
+  export class SView extends SSReactLibs.Component<SViewProps, {}> {
+
+  }
+
   // SInput
   interface SInputProps extends SSReactLibs.ComponentProps<{}> {
     placeholder?: string;
